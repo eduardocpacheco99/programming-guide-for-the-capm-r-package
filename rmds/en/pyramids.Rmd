@@ -1,0 +1,25 @@
+```{r knitsetup, echo=FALSE, results='hide', warning=FALSE, message=FALSE, cache=FALSE}
+library(knitr)
+opts_knit$set(base.dir='./')
+opts_chunk$set(prompt=TRUE, comment='', fig.path='figures/')
+```
+
+```{r,results='hide',echo=FALSE}
+library(capm)
+survey.data <- read.csv('survey.data.csv')
+```
+
+Population pyramids summarizes the basic composition of a population. At minimum, they are built from age and sex variables but they can be conditioned on a third categorical variable. The data to be used must have each variable in a separate column and those columns must be specified in the respective arguments' function.
+
+```{r pyramids}
+matrix(names(survey.data), ncol = 1)
+PlotPopPyramid(dat = survey.data,
+               age.col = 'age',
+               sex.col = 'sex')
+PlotPopPyramid(dat = survey.data,
+               age.col = 5,
+               sex.col = 4,
+               str.col = 6)
+```
+
+
