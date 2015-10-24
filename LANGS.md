@@ -1,3 +1,3 @@
-* [English](en)
-* [Português](pt-br)
-* [Español](es)
+* [English](en/)
+* [Português](pt-br/)
+* [Español](es/)
