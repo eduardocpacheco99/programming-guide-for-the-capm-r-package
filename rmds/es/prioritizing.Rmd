@@ -1,0 +1,96 @@
+```{r knitsetup, echo=FALSE, results='hide', warning=FALSE, message=FALSE, cache=FALSE}
+library(knitr)
+opts_knit$set(base.dir='./')
+opts_chunk$set(prompt=TRUE, comment='', fig.path='figures/')
+# See yihui.name/knitr/options for more Knitr options.
+##### Put other setup R code here
+
+
+# end setup chunk
+```
+
+```{r,results='hide',echo=FALSE}
+library(capm)
+```
+
+```{r,echo=FALSE,results='hide'}
+# Owned dogs            # Stray dogs
+f1 <- 39565 - 12783;    f2 <- f1 * 0.1
+fs1 <- 12783;           fs2 <- fs1 * 0.05
+m1 <- 50289 - 9346;     m2 <- m1 * 0.1
+ms1 <- 9346;            ms2 <- ms1 * 0.05
+
+# Owned dogs            # Stray dogs
+b1 <-  7724;            b2 <- b1 * 0.15
+df1 <- 0.046;           df2 <- df1 * 1.15
+dm1 <- 0.053;           dm2 <- dm1 * 1.15
+sf1 <- 0.13;            sf2 <- sf1 * 0.05
+sm1 <- 0.043;           sm2 <- sm1 * 0.05
+k1 <- (f1 + m1) * 1.1;  k2 <- (f2 + m2) * 1.1
+h1 <- 1;                h2 <- 0.5;
+a <- 0.05;              alpha <- 0.104;
+v <- 0.147
+z <- v * 0.11
+
+init.solve.iasa = c(
+  f1 = f1, fs1 = fs1,
+  m1 = m1, ms1 = ms1,
+  f2 = f2, fs2 = fs2,
+  m2 = m2, ms2 = ms2)
+
+pars.solve.iasa = c(
+  b1 = b1, b2 = b2, df1 = df1,
+  dm1 = dm1, df2 = df2, dm2 = dm2,
+  sf1 = sf1, sf2 = sf2, sm1 = sm1,
+  sm2 = sm2, k1 = k1, k2 = k2,
+  h1 = h1, h2 = h2, a = a,
+  alpha = alpha, v = v, z = z)
+
+solve.iasa.pt <- SolveIASA(
+  pars = pars.solve.iasa,
+  init = init.solve.iasa,
+  time = 0:20, method = 'rk4')
+```
+
+Finally, we will make global and local sensitivity analysis to classify the parameters according to the influence they have. Because population management interventions are mechanisms to modify (or to maintain stable) population parameters, classification of parameters is also a classification for interventions, or in other words, a way to prioritize interventions.
+
+Global sensitivity analysis are used to assess the contributions of the model parameters to the variation in the model output. With global sensitivity analysis, it is possible to add uncertainties to all parameters and assess the effect that they produce together in the population dynamics. Here, we simultaneously perturbate each parameter in an interval whose lower and upper limits were, respectively, 10% lower and 10% higher than the point estimate (for the carrying capacities, we did not consider values lower than the point estimates).
+
+```{r global_sens_all}
+rg.solve.iasa <-
+    SetRanges(pars = pars.solve.iasa,
+              range = 0.1)
+glob.all.solve.iasa <- CalculateGlobalSens(
+    model.out = solve.iasa.pt,
+    ranges = rg.solve.iasa,
+    sensv = 'ns1', all = T)
+PlotGlobalSens(global.out = glob.all.solve.iasa)
+glob.all.solve.iasa
+```
+
+In contrast to simulations based just in point estimates, here we have got a set of possible results represented by an envelope, instead of a unique result represented by a line.  
+
+For some parameters we got the estimates using sampling techniques whereas for others, the estimates were guessess. Because there are uncertainties around what are the exact values for the parameters, results from perturbations are also a representation of our uncertainties.  
+
+A natural question arises. Population dynamics are equally sensible to all parameters? If not, what are the most influent parameters? To answer these questions, one approach is to make global sensitivity analysis perturbing one parameter at a time and fixing the others in the point estimates.
+
+```{r global_sens}
+glob.solve.iasa <- CalculateGlobalSens(
+    model.out = solve.iasa.pt,
+    ranges = rg.solve.iasa,
+    sensv = 'ns1', all = F)
+PlotGlobalSens(global.out = glob.solve.iasa)
+head(glob.solve.iasa)
+```
+
+Another approach is given by local sensitivity analysis. Here the idea is to make very small perturbations and determine the sensitivity to each parameter using measurements of influence.
+
+```{r local_sens}
+local.solve.iasa <-
+    CalculateLocalSens(model.out = solve.iasa.pt,
+                       sensv = 'ns1')
+PlotLocalSens(local.out = local.solve.iasa)
+summary(local.solve.iasa)
+```
+
+Looking at the global sensitivities to each parameters or looking at the local sensitivities, it is clear that carrying capacity for the owned population is by far the more influent parameter for total number of stray dogs (the greater the envelope (or the bar) the greater the influence of the respective parameter).
