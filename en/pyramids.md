@@ -35,7 +35,7 @@ Population pyramids summarizes the basic composition of a population. At minimum
 +                sex.col = 'sex')
 ```
 
-![plot of chunk pyramids](figure/pyramids-1.png) 
+![plot of chunk pyramids](figures/pyramids-1.png) 
 
 ```r
 > PlotPopPyramid(dat = survey.data,
@@ -44,6 +44,6 @@ Population pyramids summarizes the basic composition of a population. At minimum
 +                str.col = 6)
 ```
 
-![plot of chunk pyramids](figure/pyramids-2.png) 
+![plot of chunk pyramids](figures/pyramids-2.png) 
 
 

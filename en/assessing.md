@@ -1,7 +1,8 @@
 
 
 
-Now we are ready to simulate the effect of immigration, abandonment, sterilization and adoption, on owned and stray population dynamics. `SolveIASA` function uses many parameters to run a mathematical model of population dynamics. Some parameters are from the owned population and others from the stray population.  
+
+Now we are ready to simulate the effect of immigration, abandonment, sterilization and adoption, on owned and stray population dynamics. `SolveIASA` function uses many parameters to run a mathematical model of population dynamics. Some parameters are from the owned population and others from the stray population (to see the meaning of each parameter abbreviation, see the help page for `SolveIASA`).  
 
 We have estimates for almost all parameters of the owned population but we have no estimates for the stray population. Based on literature and expert opinions, we can define subjective estimates for the stray population (in the next section we will assess how much the subjective estimates compromises the model results).
 
@@ -38,18 +39,18 @@ Initial conditions and parameters.
 
 ```r
 > init.solve.iasa = c(
-+   f1 = f1, fs1 = fs1,
-+   m1 = m1, ms1 = ms1,
-+   f2 = f2, fs2 = fs2,
-+   m2 = m2, ms2 = ms2)
++     f1 = f1, fs1 = fs1,
++     m1 = m1, ms1 = ms1,
++     f2 = f2, fs2 = fs2,
++     m2 = m2, ms2 = ms2)
 > 
 > pars.solve.iasa = c(
-+   b1 = b1, b2 = b2, df1 = df1,
-+   dm1 = dm1, df2 = df2, dm2 = dm2,
-+   sf1 = sf1, sf2 = sf2, sm1 = sm1,
-+   sm2 = sm2, k1 = k1, k2 = k2,
-+   h1 = h1, h2 = h2, a = a,
-+   alpha = alpha, v = v, z = z)
++     b1 = b1, b2 = b2, df1 = df1,
++     dm1 = dm1, df2 = df2, dm2 = dm2,
++     sf1 = sf1, sf2 = sf2, sm1 = sm1,
++     sm2 = sm2, k1 = k1, k2 = k2,
++     h1 = h1, h2 = h2, a = a,
++     alpha = alpha, v = v, z = z)
 ```
 
 
@@ -58,9 +59,9 @@ Solving the model for point estimates is straightforward.
 
 ```r
 > solve.iasa.pt <- SolveIASA(
-+   pars = pars.solve.iasa,
-+   init = init.solve.iasa,
-+   time = 0:20, method = 'rk4')
++     pars = pars.solve.iasa,
++     init = init.solve.iasa,
++     time = 0:20, method = 'rk4')
 ```
 
 We might be interested in how much different subpopulations change through time. For example, let's calculate the relative change in the total number of owned sterilized dogs from the beginning to the end of the simulated period
@@ -68,13 +69,13 @@ We might be interested in how much different subpopulations change through time.
 
 ```r
 > CalculatePopChange(
-+   model.out = solve.iasa.pt,
-+   variable = 'ns1',
-+   t1 = 0, t2 = 20)
++     model.out = solve.iasa.pt,
++     variable = 'ns1',
++     t1 = 0, t2 = 20)
 ```
 
 ```
-[1] 1.129381
+[1] At t2, ns1 is 12.94% higher than (or 112.94% times) ns1 at t1.
 ```
 
 and the absolute change in the number of stray intact females from the fifth to the tenth year.
@@ -82,13 +83,13 @@ and the absolute change in the number of stray intact females from the fifth to 
 
 ```r
 > CalculatePopChange(
-+   model.out = solve.iasa.pt,
-+   variable = 'fs2',
-+   t1 = 5, t2 = 10, ratio = F)
++     model.out = solve.iasa.pt,
++     variable = 'fs2',
++     t1 = 5, t2 = 10, ratio = F)
 ```
 
 ```
-[1] 54.90865
+Compared with t1, in t2 fs2 is increased by 54.91
 ```
 
 The dynamics of different subpopulations can be plotted too (see the help page for `PlotModels`).
@@ -99,24 +100,24 @@ The dynamics of different subpopulations can be plotted too (see the help page f
 +            variable = 'ns1')
 ```
 
-![plot of chunk point_estimates_simulation](figure/point_estimates_simulation-1.png) 
+![plot of chunk point_estimates_simulation](figures/point_estimates_simulation-1.png) 
 
 We can also simulate scenarios to assess the interaction between different combinations of sterilization, abandonment, adoptions and immigration rates. In the following example we will create 900 scenarios (50 sterilization rates, 3 abandonment rates, 3 adoption rates and 2 immigration rates).
 
 
 ```r
 > solve.iasa.rg <- SolveIASA(
-+   pars = pars.solve.iasa,
-+   init = init.solve.iasa,
-+   time = seq(0, 20, by = 0.5),
-+   s.range = seq(from = 0, to = 0.4,
-+                 length.out = 50),
-+   a.range = c(0, .2),
-+   alpha.range = c(0, .2),
-+   v.range = c(0, .2),
-+   method = 'rk4')
++     pars = pars.solve.iasa,
++     init = init.solve.iasa,
++     time = seq(0, 20, by = 0.5),
++     s.range = seq(from = 0, to = 0.4,
++                   length.out = 50),
++     a.range = c(0, .2),
++     alpha.range = c(0, .2),
++     v.range = c(0, .2),
++     method = 'rk4')
 > PlotModels(model.out = solve.iasa.rg,
 +            variable = 'ns')
 ```
 
-![plot of chunk scenarios](figure/scenarios-1.png) 
+![plot of chunk scenarios](figures/scenarios-1.png) 

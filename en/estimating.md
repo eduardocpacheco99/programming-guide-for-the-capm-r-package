@@ -2,7 +2,7 @@
 
 
 
-Having defined the final sample, suppose we went to visit all the selected households and the collected data were recorded in a file called `survey.data.csv`.  To see a description of each variable, see the help page of the file typing `?survey.data`.
+Having defined the final sample, suppose we went to visit all the selected households and the collected data were recorded in a file called `survey.data.csv`.  (to see a description of each variable, see the help page of the file typing `?survey.data`).
 
 
 ```r
@@ -34,7 +34,7 @@ Having defined the final sample, suppose we went to visit all the selected house
 6                    <NA>
 ```
 
-To estimate the population parameters, the first step is to define the sampling design from which the data come from. To do this, we need a file containing all the sampling units in the population (`psu.ssu`) and a file with the sampling data (`survey.data`). In this last file, the columns containing PSU's and SSU's identifiers must be specified, as well as the number of PSU's included in the sample (for PSU's included more than once, each occurrence must be counted).
+To estimate the population parameters, the first step is to define the sampling design from which the data came from. To do this, we need a file containing all the sampling units in the population (`psu.ssu`) and a file with the sampling data (`survey.data`). In this last file, the columns containing PSU's and SSU's identifiers must be specified, as well as the number of PSU's included in the sample (if a PSU was selected more than once, each occurrence must be counted).
 
 
 ```r
@@ -49,8 +49,8 @@ Setting the type of estimate for each variable is easy. Empty quotes exclude a v
 
 
 ```r
-> variables <- c("total", "prop", "mean", "prop",
-+                "prop", "total", rep("prop", 8))
+> variables <- c('total', 'prop', 'mean', 'prop',
++                'prop', 'total', rep('prop', 8))
 ```
 
 It is convenient to confirm that we have defined the type of estimates we want.
@@ -157,17 +157,17 @@ The previous output is very useful but might not be enough. Let's make a copy (`
 
 ```r
 > sample1 <-
-+   survey.data[, c('interview_id', 'psu',
-+                   'dogs', 'sex', 'sterilized',
-+                   'sterilized.ly', 'fate')]
++     survey.data[, c('interview_id', 'psu',
++                     'dogs', 'sex', 'sterilized',
++                     'sterilized.ly', 'fate')]
 > sample1[, 'sterilized'] <-
-+   as.character(sample1[, 'sterilized'])
-> sample1[which(sample1$sterilized == "yes"),
++     as.character(sample1[, 'sterilized'])
+> sample1[which(sample1$sterilized == 'yes'),
 +         'sterilized'] <- 1
-> sample1[which(sample1[, 'sterilized'] == "no"),
+> sample1[which(sample1[, 'sterilized'] == 'no'),
 +         'sterilized'] <- 0
 > sample1[, 'sterilized'] <-
-+   as.numeric(sample1[, 'sterilized'])
++     as.numeric(sample1[, 'sterilized'])
 ```
 
 After defining a sampling design in the usual way

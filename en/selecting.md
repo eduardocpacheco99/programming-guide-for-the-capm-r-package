@@ -1,11 +1,11 @@
 
 
-With the `capm` package it is possible to implement three sample designs:
-* Simple random sampling
-* Stratified random sampling
-* Complex random samplin (two-stage cluster desings with PPS selection)
+With the `capm` package it is possible to implement three sample designs:  
+* Systematic random sampling  
+* Stratified random sampling  
+* Complex random sampling (two-stage cluster desings with PPS selection)  
 
-Let's implement a two-stage cluster design, the most challenging but also the most appropriate in some situations (large cities). The file `psu.ssu.csv` contains data of Santos city in Brazil.  Data were extracted from a bureau of Statistics [(IBGE)](www.ibge.gov.br). The first column has unique identifiers of census tracks, our primary sampling units (PSU's). The second column contains the number of households in each PSU. Households are our secondary sampling units (SSU's) and they are also the measure of size for PSU's.  
+Let's implement a two-stage cluster design, the most challenging but also the most appropriate in some situations (large cities). The file `psu.ssu.csv` contains data of Santos city in Brazil.  Data were extracted from a bureau of Statistics ([IBGE](http://ibge.gov.br)). The first column has unique identifiers of census tracks, our Primary Sampling Units (PSU's). The second column contains the number of households in each PSU. Households are our Secondary Sampling Units (SSU's) and they are also the measure of size for PSU's.  
 
 Load the package and import the file.
 
@@ -15,7 +15,7 @@ Load the package and import the file.
 > psu.ssu <- read.csv(file = 'psu.ssu.csv')
 ```
 
-we can see that there are 652 PSU's and the first six rows give us an idea of the data.
+We can see that there are 652 PSU's and the first six rows give us an idea of the data.
 
 
 ```r
@@ -61,7 +61,7 @@ All PSU's are apparently equal but this just a scientific notation output. The i
 [1] 652
 ```
 
-The file contains exactly the information we need to sample PSU's with probability proportional to their sizes, with replacement. If the `write` argument of `SamplePPS` is set as TRUE, selected PSU will be saved in a csv file, which can be viewed in a spreadsheet software. The output will have as many rows as selected PSU's. Remember that the same PSU can be selected more than once because sampling is with replacement.   
+The file contains exactly the information we need to sample PSU's with probability proportional to their sizes (PPS), with replacement. If the `write` argument of `SamplePPS` is set as `TRUE`, selected PSU will be saved in a "csv" file, which can be viewed in a spreadsheet software. The output will have as many rows as selected PSU's. Remember that the same PSU can be selected more than once because sampling is with replacement.   
 
 If we use `set.seed(some_number)`, the next pseudo random sample always will be the same. In this guide I will use `set.seed(4)` so you can reproduce exactly all the examples. However, in real applications you must not use `set.seed`.
 
@@ -106,8 +106,8 @@ Selecting SSU's is as simple as the previous selection. The output will have as 
 ```r
 > set.seed(4)
 > pilot.ssu <- SampleSystematic(
-+   psu.ssu = pilot.psu,
-+   su = 5, write = FALSE)
++     psu.ssu = pilot.psu,
++     su = 5, write = FALSE)
 ```
 
 Let's see the first two columns to have an idea.
