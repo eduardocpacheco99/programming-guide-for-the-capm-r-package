@@ -1,10 +1,9 @@
 # Summary
-This is the summary of my book.
 
-* [Selection of sampling units](selection_su.md)
-* [Mapping of sampling units](mapping.md)
-* [Calculation of sample size](sample_size.md)
-* [Estimation of demographic characteristics](estimation.md)
-* [Construction of population pyramids](pyramids.md)
-* [Assessment of intervention effect](assessment.md)
-* [Prioritization of interventions](prioritization.md)
+* [Selecting sampling units](selecting.md)
+* [Mapping sampling units](mapping.md)
+* [Calculating sample size](sampling.md)
+* [Estimating demographic characteristics](estimating.md)
+* [Building population pyramids](pyramids.md)
+* [Assessing intervention effects](assessing.md)
+* [Prioritizing interventions](prioritizing.md)
