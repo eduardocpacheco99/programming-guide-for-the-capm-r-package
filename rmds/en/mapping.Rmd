@@ -17,7 +17,7 @@ pilot.ssu <- SampleSystematic(
     su = 5, write = FALSE)
 ```
 
-For two-stage cluster designs (see previous section), it is almost necessary to map the Primary Sampling Units (PSU) in order to know where we need to go. Fortunately, the `capm` has a function to locate the PSU's. If we have a shapefile of the PSU's, we are done - as in this case. In the working directory, there are five files named as "santos", each one with a different extension. All those files are a shapefile representation of the PSU's from the sampled area (Santos city). I got the files in the bureau of statistics mentioned in the previous section.  
+For two-stage cluster designs (see previous section), it is almost necessary to map the PSU's in order to know where we need to go. Fortunately, the `capm` has a function to map the PSU's. If we have a shapefile of the PSU's, we are done - as in this case. In the working directory, there are five files named as "santos", each one with a different extension. All those files are a shapefile representation of the PSU's from the sampled area (Santos city). I got the files in the bureau of statistics mentioned in the previous section.  
 
 ```{r,eval=FALSE}
 MapkmlPSU(shape = 'santos',
@@ -25,9 +25,9 @@ MapkmlPSU(shape = 'santos',
           id = 1)
 ```
 
-`MapkmlPSU` creates a kml file for each selected PSU plus a kml with all selected PSU's. Those kml files can be opened with Google Hearth just clicking on them. [QGIS](http://qgis.org) is an open source tool, which can also render different layers as a background to the kml files. 
+`MapkmlPSU` creates a "kml" file for each selected PSU plus a kml with all selected PSU's. Those kml files can be opened with Google Hearth just clicking on them. [QGIS](http://qgis.org) is an open source tool, which can also render different layers as a background to the kml files. 
 
-Of course, R allow us to plot the locations of the selected PSU's. Do not worry if you do not understand the following code snippet, it is just an alternative to Google Hearth or QGIS, which I am using here just to show that you can map in R the selected PSU's.
+Of course, R allow us to plot the locations of the selected PSU's. Do not worry if you do not understand the following code snippet, it is just another alternative to Google Hearth or QGIS.
 
 If "503 Service Unavailable" error appears, try later to see if OSM servers come back (see the help page of `get_openstreetmap`).
 
