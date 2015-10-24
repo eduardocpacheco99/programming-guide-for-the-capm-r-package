@@ -1,0 +1,2 @@
+# *.Rmd and *.HTML files to used to build *.md files.
+rmds/*
