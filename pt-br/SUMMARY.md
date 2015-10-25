@@ -1,9 +1,9 @@
-# Summary
+# Sumário
 
-* [Selecting sampling units](selecting.md)
-* [Mapping sampling units](mapping.md)
-* [Calculating sample size](sampling.md)
-* [Estimating demographic characteristics](estimating.md)
-* [Building population pyramids](pyramids.md)
-* [Assessing intervention effects](assessing.md)
-* [Prioritizing interventions](prioritizing.md)
+* [Selecionando unidades amostrais](selecting.md)
+* [Mapeando unidades amostrais](mapping.md)
+* [Calculando o tamanho amostral](sampling.md)
+* [Estimando características demográficas](estimating.md)
+* [Cooonstruindo pirâmides populacionais](pyramids.md)
+* [Avaliando os efeitos das intervenções](assessing.md)
+* [Priorizando intervenções](prioritizing.md)
