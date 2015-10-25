@@ -19,14 +19,14 @@ final.psu <- SamplePPS(psu.ssu, 20, write = F)
 final.ssu <- SampleSystematic(final.psu, 15, write = F)
 ```
 
-Having defined the final sample, suppose we went to visit all the selected households and the collected data were recorded in a file called `survey.data.csv`.  (to see a description of each variable, see the help page of the file typing `?survey.data`).
+Habiendo definido la muestra final, supongamos que fuimos a visitar todas las residencias seleccionadas y los datos colectados fueron guardados en un archivo llamado `survey.data.csv` (la página de ayuda de `survey.data` describe las variables).
 
 ```{r}
 survey.data <- read.csv('survey.data.csv')
 head(survey.data)
 ```
 
-To estimate the population parameters, the first step is to define the sampling design from which the data came from. To do this, we need a file containing all the sampling units in the population (`psu.ssu`) and a file with the sampling data (`survey.data`). In this last file, the columns containing PSU's and SSU's identifiers must be specified, as well as the number of PSU's included in the sample (if a PSU was selected more than once, each occurrence must be counted).
+Para estimar los parámetros popblacionales, el primer paso es definir el diseño muestral que dió origen a los datos. Para hacerlo, necesitamos un archivo con todas las unidades muestrales de la población (`psu.ssu`) y un archivo con los datos muestrales (`survey.data`). Este último archivo, debe tener una columna con las UPM, otra con las USM y otra con el número de UPM incluídas en la muestra (si una UPM fue seleccionada más de una vez, cada ocurrencia debe ser contada).
 
 ```{r}
 design <- DesignSurvey(sample = survey.data,
@@ -36,20 +36,20 @@ design <- DesignSurvey(sample = survey.data,
                        psu.2cd = 20)
 ```
 
-Setting the type of estimate for each variable is easy. Empty quotes exclude a variable from the estimation procedure.
+Definir el tipo de estimativa para cda variable es facil.
 
 ```{r}
 variables <- c('total', 'prop', 'mean', 'prop',
                'prop', 'total', rep('prop', 8))
 ```
 
-It is convenient to confirm that we have defined the type of estimates we want.
+Es conveninente confirmar que hemos definido el tipo de estimativa que queremos.
 
 ```{r}
 cbind(names(design$variables), variables)
 ```
 
-Now we are ready to get our first estimates.
+Ahora estamos listos para obtener nuestras primeras estimativas.
 
 ```{r}
 (estimates <- SummarySurvey(design = design,
@@ -57,7 +57,7 @@ Now we are ready to get our first estimates.
                             rnd = 3))
 ```
 
-The previous output is very useful but might not be enough. Let's make a copy (`sample1`) of a transformed subset of `survey.data`, to estimate the total number of sterilized animals (instead of the proportion) and to get estimates conditioned on sex.
+El resultado anterior es bastante útil pero puede no ser suficiente. Hagamos una copia (`sample1`) de un subconjunto de `survey.data`, para estimar el total de animales esterilizados (en lugar de la proporción) y para obtener estimativas condicionadas por el sexo.
 
 ```{r}
 sample1 <-
@@ -74,7 +74,7 @@ sample1[, 'sterilized'] <-
     as.numeric(sample1[, 'sterilized'])
 ```
 
-After defining a sampling design in the usual way
+Despúes de definir el diseño muestral de la forma usual
 
 ```{r}
 design.sex <- DesignSurvey(sample = sample1,
@@ -84,16 +84,18 @@ design.sex <- DesignSurvey(sample = sample1,
                            psu.2cd = 20)
 ```
 
-we can create a design for each sex.
+podemos crear un diseño para cada sexo.
 
 ```{r}
 design.f <- subset(design.sex, sex == 'Female')
 design.m <- subset(design.sex, sex == 'Male')
 ```
 
-From here, there is nothing new.
+A partir de aqui no hay nada nuevo.
 
 ```{r}
+# Comillas cerradas exculyen una variable
+# del processo de estimación.
 names(design.sex$variables)
 variables.sex <- c('total', '', 'total', 
                    'prop', 'prop')

@@ -52,9 +52,9 @@ solve.iasa.pt <- SolveIASA(
   time = 0:20, method = 'rk4')
 ```
 
-Finally, we will make global and local sensitivity analysis to classify the parameters according to the influence they have. Because population management interventions are mechanisms to modify (or to maintain stable) population parameters, classification of parameters is also a classification for interventions, or in other words, a way to prioritize interventions.
+Para finalizar, haremos análisis de sensibilidad global y local para clasificar los parámetros de acuerdo con la influencia que ejercen. Dado que las intervenciones de manejo poblacional son mecanismos para modificar (o mantener estables) parámetros poblacionales, la clasificación de parámetros es también una clasificación de intervenciones, o en otras palabras, una forma de priorizar las intervenciones.
 
-Global sensitivity analysis are used to assess the contributions of the model parameters to the variation in the model output. With global sensitivity analysis, it is possible to add uncertainties to all parameters and assess the effect that they produce together in the population dynamics. Here, we simultaneously perturbate each parameter in an interval whose lower and upper limits were, respectively, 10% lower and 10% higher than the point estimate (for the carrying capacities, we did not consider values lower than the point estimates).
+Los análisis de sensibilidad global son usadas para evaluar la contribución de los parámetros del modelo, en la variación de los resultados. Con los análisis de sensibilidad global es posible adicionar incertezas a todos los parámetros y evaluar el efecto que produzen conjuntamente en la dinámica poblacional. A continuación perturbaremos simultáneamente cada parámetro en un intervalo cuyos límites inferior y superior son respectivamente, 10% menores y 10% superiores a las estimativas puntuales (para las capacidades de carga, no consideraremos valores menores a las estimativas puntuales).
 
 ```{r global_sens_all}
 rg.solve.iasa <-
@@ -68,11 +68,11 @@ PlotGlobalSens(global.out = glob.all.solve.iasa)
 glob.all.solve.iasa
 ```
 
-In contrast to simulations based just in point estimates, here we have got a set of possible results represented by an envelope, instead of a unique result represented by a line.  
+A diferencia de simulaciones basadas solo en estimativas puntuales, aquí obtuvimos un conjunto de posibles resultados representados por una envoltura, en lugar de un único resultado representado por una línea.  
 
-For some parameters we got the estimates using sampling techniques whereas for others, the estimates were guessess. Because there are uncertainties around what are the exact values for the parameters, results from perturbations are also a representation of our uncertainties.  
+Para algunos parámetros obtuvimos las estimativas usando técnicas de muestreo mientras que para otros, las estimativaas fueron subjetivas. Dado que hay incertezas en relación a los valores exactos de los parámetros, los resultados de las perturbaciones taambién representan nuestras incertezas.  
 
-A natural question arises. Population dynamics are equally sensible to all parameters? If not, what are the most influent parameters? To answer these questions, one approach is to make global sensitivity analysis perturbing one parameter at a time and fixing the others in the point estimates.
+Una questión que surge es: ¿La dinámica poblacional es igualmente sensible a todos los parámetros? Si, no ¿Cuáles son los parametros más influyentes? Una forma de responder estas preguntas consiste en la realización de análisis de sensibilidad global, perturbando un parámetro por vez y fijando los restantes en las estimativas puntuales.
 
 ```{r global_sens}
 glob.solve.iasa <- CalculateGlobalSens(
@@ -83,7 +83,7 @@ PlotGlobalSens(global.out = glob.solve.iasa)
 head(glob.solve.iasa)
 ```
 
-Another approach is given by local sensitivity analysis. Here the idea is to make very small perturbations and determine the sensitivity to each parameter using measurements of influence.
+Otra forma consiste en la realización de análisis de sensibilidad local. Aquí la idea es realizar pequñas perturbaciones y determinar la sensibilidad de cada parámetro usando medidas de influencia.
 
 ```{r local_sens}
 local.solve.iasa <-
@@ -93,4 +93,4 @@ PlotLocalSens(local.out = local.solve.iasa)
 summary(local.solve.iasa)
 ```
 
-Looking at the global sensitivities to each parameters or looking at the local sensitivities, it is clear that carrying capacity for the owned population is by far the more influent parameter for total number of stray dogs (the greater the envelope (or the bar) the greater the influence of the respective parameter).
+Al ver las sensibilidades globales de cada parámetro y las sensibilidade locales, es claro que la capacidad de carga de la población de perros de casa es de lejos el parámetro más influyente para el total de perros de casa (cuanto mayor la envoltura (o la barra), mayor la influencia del respectivo parámetro).

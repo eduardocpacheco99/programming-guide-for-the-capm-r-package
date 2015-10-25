@@ -4,7 +4,7 @@ oswaldosant@gmail.com
 Last revision: 25th October 2015
 <br><br><br><br>
 
-My purppose with this guide is to show you how to implement the general [workflow](http://oswaldosantos.github.io/capm) supported by the `capm`, without going into theoretical details or practical implications (these will be the focus of research papers and other complementary documentation).  
+The purppose of this guide is to show you how to implement the general [workflow](http://oswaldosantos.github.io/capm) supported by the `capm`, without going into theoretical details or practical implications (these will be the focus of research papers and other complementary documentation).  
  
 #### Assumptions to reproduce this guide:
 
@@ -22,4 +22,4 @@ My purppose with this guide is to show you how to implement the general [workflo
 
 This files can be downloaded [here](https://github.com/oswaldosantos/programming-guide-for-the-capm-r-package) using the "Download ZIP" button at the bottom right.  
 
-I will not use all the `capm` functions and the functions that we will use have additional arguments that give more flexibility. Please, see the functions' help pages for details.
+Not all `capm` functions will be used and for those used, not all arguments will be used. Please, see the functions' help pages for details.

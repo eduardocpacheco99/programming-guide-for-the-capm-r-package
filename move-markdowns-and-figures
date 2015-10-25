@@ -9,4 +9,10 @@ mv rmds/en/*.md en
 # Move english figures
 cp -a rmds/en/figures/. en/figures
 
+# Move sapnish *.md
+mv rmds/es/*.md es
+
+# Move spanish figures
+cp -a rmds/es/figures/. es/figures
+
 

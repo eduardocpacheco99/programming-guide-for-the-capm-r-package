@@ -1,17 +1,17 @@
-# Programming guide for the `capm` R package
+# Guía de programación para el paquete de R `capm`
 #### Oswaldo Santos Baquero
 oswaldosant@gmail.com  
-Last revision: 25th October 2015
+última revisión: 25th October 2015
 <br><br><br><br>
 
-My purppose with this guide is to show you how to implement the general [workflow](http://oswaldosantos.github.io/capm) supported by the `capm`, without going into theoretical details or practical implications (these will be the focus of research papers and other complementary documentation).  
+El propóstio de esta guía es mostrar como implementar el [flujo de trabajo](http://oswaldosantos.github.io/capm) soportado por el `capm`, sin entrar en detalles teóricos o en implicaciones prácticas (esto será foco de artículos académicos y de documentación complementar).  
  
-#### Assumptions to reproduce this guide:
+#### Presupuestos para reproduzir esta guía:
 
-* Minimal background in R programming.
-* Familiarity with R functions' help pages.
-* `capm` version 0.8.0 installed.
-* The current working directory must contain the following files: 
+* Conocimiento mínimo de R.
+* Familiaridad con el uso de las páginas de ajuda de la funciones de R.
+* `capm` versión 0.8.0 instalado.
+* El área de trabajo actual debe contener los siguientes archivos: 
  * pilot.csv
  * psu.ssu.csv
  * santos.dbf
@@ -20,6 +20,6 @@ My purppose with this guide is to show you how to implement the general [workflo
  * santos.shx
  * survey.data.csv
 
-This files can be downloaded [here](https://github.com/oswaldosantos/programming-guide-for-the-capm-r-package) using the "Download ZIP" button at the bottom right.  
+Los archivos pueden ser descargados [aquí](https://github.com/oswaldosantos/programming-guide-for-the-capm-r-package) usando el botón "Download ZIP" en la parte inferior derecha.  
 
-I will not use all the `capm` functions and the functions that we will use have additional arguments that give more flexibility. Please, see the functions' help pages for details.
+No serán usadas todas las funciones del `capm` y de las funciones usadas no serán usadostodos los argumentos. Pro favor consulte las páginas de ayuda de las funciones para ver los detalles.

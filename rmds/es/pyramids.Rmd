@@ -9,7 +9,7 @@ library(capm)
 survey.data <- read.csv('survey.data.csv')
 ```
 
-Population pyramids summarizes the basic composition of a population. At minimum, they are built from age and sex variables but they can be conditioned on a third categorical variable. The data to be used must have each variable in a separate column and those columns must be specified in the respective arguments' function.
+Las pirámides poblaciones resumen la composición básica de la población. Como mínimo, son construidas a partir de las variables "edad" y "sexo", pero pueden estar condicionadas por una tercera variable categórica. Las variables deben ser espcificadas en los respectivos argumentos de la función.
 
 ```{r pyramids}
 matrix(names(survey.data), ncol = 1)

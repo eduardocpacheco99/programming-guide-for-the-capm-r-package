@@ -8,24 +8,24 @@ opts_chunk$set(prompt=TRUE, comment='', fig.path='figures/')
 library(capm)
 ```
 
-Now we are ready to simulate the effect of immigration, abandonment, sterilization and adoption, on owned and stray population dynamics. `SolveIASA` function uses many parameters to run a mathematical model of population dynamics. Some parameters are from the owned population and others from the stray population (to see the meaning of each parameter abbreviation, see the help page for `SolveIASA`).  
+Ahora estamos listos para simular el efecto de la imigración, el abandono, la esterilización y la adopción, en la dinámica pobacional de perros de casa y callejeros. La función `SolveIASA` usa varios parámetros en un modelo de dinámica poblacional. Algunos parámetros son de perros de casa y otros de callejeros (la página de ajuda de `SolveIASA` describe las abreviaciones de los parámetros).  
 
-We have estimates for almost all parameters of the owned population but we have no estimates for the stray population. Based on literature and expert opinions, we can define subjective estimates for the stray population (in the next section we will assess how much the subjective estimates compromises the model results).
+Tenemos estimativas para casi todos los parámetros de la población de perros de casa pero no tenemos estimativas para la población de callejeros. Con base en la literatura y en la opinión de expertos, podemos definir estimativas subjetivas para la población de callejeros (en la siguiente sección evaluaremos que tanto las estimativas subjetivas comprometen los resultados del modelo).
 
-Values to define the initial conditions.
+Valores para definir las condiciones iniciales.
 
 ```{r}
-# Owned dogs            # Stray dogs
+# Perros de casos       # Perros callejeros
 f1 <- 39565 - 12783;    f2 <- f1 * 0.1
 fs1 <- 12783;           fs2 <- fs1 * 0.05
 m1 <- 50289 - 9346;     m2 <- m1 * 0.1
 ms1 <- 9346;            ms2 <- ms1 * 0.05
 ```
 
-Values to define the parameters.
+Valores para definir los parámetros.
 
 ```{r}
-# Owned dogs            # Stray dogs
+# Perros de casos       # Perros callejeros
 b1 <-  7724;            b2 <- b1 * 0.15
 df1 <- 0.046;           df2 <- df1 * 1.15
 dm1 <- 0.053;           dm2 <- dm1 * 1.15
@@ -38,7 +38,7 @@ v <- 0.147
 z <- v * 0.11
 ```
 
-Initial conditions and parameters.
+Parámetros y condiciones iniciales.
 
 ```{r}
 init.solve.iasa = c(
@@ -56,8 +56,7 @@ pars.solve.iasa = c(
     alpha = alpha, v = v, z = z)
 ```
 
-
-Solving the model for point estimates is straightforward.
+Solucionar el modelo para las estimativas puntuales es simple.
 
 ```{r}
 solve.iasa.pt <- SolveIASA(
@@ -66,7 +65,7 @@ solve.iasa.pt <- SolveIASA(
     time = 0:20, method = 'rk4')
 ```
 
-We might be interested in how much different subpopulations change through time. For example, let's calculate the relative change in the total number of owned sterilized dogs from the beginning to the end of the simulated period
+Podemos estar interesados en que tanto cambian diferentes subpoblaciones a través del tiempo. Por ejemplo, calculemos el cambio relativo del total perros de casa esterilizados, desde el comienzo hasta el final del periodo simulado
 
 ```{r}
 CalculatePopChange(
@@ -75,7 +74,7 @@ CalculatePopChange(
     t1 = 0, t2 = 20)
 ```
 
-and the absolute change in the number of stray intact females from the fifth to the tenth year.
+y el cambio absoluto del total de hembras callejeras no esterilizadas, entre el quinto y el décimo año.
 
 ```{r}
 CalculatePopChange(
@@ -84,14 +83,14 @@ CalculatePopChange(
     t1 = 5, t2 = 10, ratio = F)
 ```
 
-The dynamics of different subpopulations can be plotted too (see the help page for `PlotModels`).
+La dinámica de diferentes subpoblaciones también puede ser plotada (var la página de ayuda de `PlotModels`).
 
 ```{r point_estimates_simulation}
 PlotModels(model.out = solve.iasa.pt,
            variable = 'ns1')
 ```
 
-We can also simulate scenarios to assess the interaction between different combinations of sterilization, abandonment, adoptions and immigration rates. In the following example we will create 900 scenarios (50 sterilization rates, 3 abandonment rates, 3 adoption rates and 2 immigration rates).
+También podemos simular escenarios para evaluar la interacción entre diferentes combinaciones de tazas de esterilización, abandono, adopción e imigración. En el siguiente ejemplo crearemos 900 escenarios (50 tazas de esterilización, 3 tazas de abandono, 3 tazas de adopción y 2 tazas de imigración).
 
 ```{r scenarios,fig.height=12,fig.width=12}
 solve.iasa.rg <- SolveIASA(
