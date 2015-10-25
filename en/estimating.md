@@ -2,7 +2,7 @@
 
 
 
-Having defined the final sample, suppose we went to visit all the selected households and the collected data were recorded in a file called `survey.data.csv`.  (to see a description of each variable, see the help page of the file typing `?survey.data`).
+Having defined the final sample, suppose we went to visit all the selected households and the collected data were recorded in a file called `survey.data.csv` (the help page for `survey.data` describes the variables).
 
 
 ```r
@@ -34,7 +34,7 @@ Having defined the final sample, suppose we went to visit all the selected house
 6                    <NA>
 ```
 
-To estimate the population parameters, the first step is to define the sampling design from which the data came from. To do this, we need a file containing all the sampling units in the population (`psu.ssu`) and a file with the sampling data (`survey.data`). In this last file, the columns containing PSU's and SSU's identifiers must be specified, as well as the number of PSU's included in the sample (if a PSU was selected more than once, each occurrence must be counted).
+To estimate the population parameters, the first step is to define the sampling design from which the data came from. To do this, we need a file containing all the sampling units in the population (`psu.ssu`) and a file with the sampling data (`survey.data`). This last file must have a column with the PSU's, another with the SSU's and another with the number of PSU's included in the sample (if a PSU was selected more than once, each occurrence must be counted).
 
 
 ```r
@@ -45,7 +45,7 @@ To estimate the population parameters, the first step is to define the sampling 
 +                        psu.2cd = 20)
 ```
 
-Setting the type of estimate for each variable is easy. Empty quotes exclude a variable from the estimation procedure.
+Setting the type of estimate for each variable is easy.
 
 
 ```r
@@ -152,7 +152,7 @@ Prop.immigrant.sterilized.ly.no  1.974    16.354
 Prop.immigrant.sterilized.ly.yes 1.974   132.061
 ```
 
-The previous output is very useful but might not be enough. Let's make a copy (`sample1`) of a transformed subset of `survey.data`, to estimate the total number of sterilized animals (instead of the proportion) and to get estimates conditioned on sex.
+The previous output is very useful but might not be enough. Let's make a copy (`sample1`) of a subset of `survey.data`, to estimate the total number of sterilized animals (instead of the proportion) and to get estimates conditioned on sex.
 
 
 ```r
@@ -193,6 +193,8 @@ From here, there is nothing new.
 
 
 ```r
+> # Empty quotes exclude a variable
+> # from the estimation procedure.
 > names(design.sex$variables)
 ```
 

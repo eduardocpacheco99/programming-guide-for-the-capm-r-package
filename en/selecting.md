@@ -36,7 +36,7 @@ We can see that there are 652 PSU's and the first six rows give us an idea of th
 6 3.5485e+14  46
 ```
 
-All PSU's are apparently equal but this just a scientific notation output. The identifiers must be unique for each PSU. To verify this requirement we can change the printing default or verify that the number of different identifiers is equal to the number of PSU.
+All PSU's are apparently equal due to scientific notation output. The identifiers must be unique for each PSU. To verify this requirement we can change the printing default or verify that the number of different identifiers is equal to the number of PSU.
 
 
 ```r
@@ -61,7 +61,7 @@ All PSU's are apparently equal but this just a scientific notation output. The i
 [1] 652
 ```
 
-The file contains exactly the information we need to sample PSU's with probability proportional to their sizes (PPS), with replacement. If the `write` argument of `SamplePPS` is set as `TRUE`, selected PSU will be saved in a "csv" file, which can be viewed in a spreadsheet software. The output will have as many rows as selected PSU's. Remember that the same PSU can be selected more than once because sampling is with replacement.   
+The file contains exactly the information we need to sample PSU's with probability proportional to their sizes (PPS), with replacement. If the `write` argument of `SamplePPS` is set as `TRUE`, selected PSU will be saved in a "csv" file, which can be viewed in a spreadsheet software. The output will have as many rows as selected PSU's. Remember that the a PSU can be selected more than once because sampling is with replacement.   
 
 If we use `set.seed(some_number)`, the next pseudo random sample always will be the same. In this guide I will use `set.seed(4)` so you can reproduce exactly all the examples. However, in real applications you must not use `set.seed`.
 

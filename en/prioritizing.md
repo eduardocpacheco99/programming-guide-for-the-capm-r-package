@@ -6,7 +6,7 @@
 
 Finally, we will make global and local sensitivity analysis to classify the parameters according to the influence they have. Because population management interventions are mechanisms to modify (or to maintain stable) population parameters, classification of parameters is also a classification for interventions, or in other words, a way to prioritize interventions.
 
-Global sensitivity analysis are used to assess the contributions of the model parameters to the variation in the model output. With global sensitivity analysis, it is possible to add uncertainties to all parameters and assess the effect that they produce together in the population dynamics. Here, we simultaneously perturbate each parameter in an interval whose lower and upper limits were, respectively, 10% lower and 10% higher than the point estimate (for the carrying capacities, we did not consider values lower than the point estimates).
+Global sensitivity analysis are used to assess the contributions of the model parameters to the variation in the model output. With global sensitivity analysis, it is possible to add uncertainties to all parameters and assess the effect that they produce together in the population dynamics. In the next code chunk we will simultaneously perturbate each parameter in an interval whose lower and upper limits were, respectively, 10% lower and 10% higher than the point estimate (for the carrying capacities, we will not consider values lower than the point estimates).
 
 
 ```r
@@ -75,9 +75,9 @@ ns120 26142.76 27736.72
 
 In contrast to simulations based just in point estimates, here we have got a set of possible results represented by an envelope, instead of a unique result represented by a line.  
 
-For some parameters we got the estimates using sampling techniques whereas for others, the estimates were guessess. Because there are uncertainties around what are the exact values for the parameters, results from perturbations are also a representation of our uncertainties.  
+For some parameters we got the estimates using sampling techniques whereas for others, the estimates were guessess. Because there are uncertainties around parameters' exact values, results from perturbations are also a representation of our uncertainties.  
 
-A natural question arises. Population dynamics are equally sensible to all parameters? If not, what are the most influent parameters? To answer these questions, one approach is to make global sensitivity analysis perturbing one parameter at a time and fixing the others in the point estimates.
+A natural question arises. Population dynamics are equally sensible to all parameters? If not, what are the most influent parameters? One way to answer these questions is to make global sensitivity analysis perturbing one parameter at a time and fixing the others in the point estimates.
 
 
 ```r
@@ -111,7 +111,7 @@ ns14 27743.64 27743.98    b1
 ns15 27839.60 27841.45    b1
 ```
 
-Another approach is given by local sensitivity analysis. Here the idea is to make very small perturbations and determine the sensitivity to each parameter using measurements of influence.
+Another way is to make local sensitivity analysis. Here the idea is to make very small perturbations and determine the sensitivity to each parameter using measurements of influence.
 
 
 ```r
@@ -149,4 +149,4 @@ v     1.5e-01 1.5e-01  1218.5  353.22  1218.5     0.0  2909.6 21
 z     1.6e-02 1.6e-02    99.2   27.03    99.2     0.0   199.4 21
 ```
 
-Looking at the global sensitivities to each parameters or looking at the local sensitivities, it is clear that carrying capacity for the owned population is by far the more influent parameter for total number of stray dogs (the greater the envelope (or the bar) the greater the influence of the respective parameter).
+Looking at the global sensitivities to each parameters or looking at the local sensitivities, it is clear that carrying capacity for the owned population is by far the more influent parameter for the total number of owned dogs (the greater the envelope (or the bar) the greater the influence of the respective parameter).

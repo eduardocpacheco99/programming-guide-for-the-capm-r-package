@@ -2,7 +2,7 @@
 
 
 
-Population pyramids summarizes the basic composition of a population. At minimum, they are built from age and sex variables but they can be conditioned on a third categorical variable. The data to be used must have each variable in a separate column and those columns must be specified in the respective arguments' function.
+Population pyramids summarizes the basic composition of a population. At minimum, they are built from "age" and "sex"" variables but they can be conditioned on a third categorical variable. Those variables must be specified in the respective function arguments.
 
 
 ```r

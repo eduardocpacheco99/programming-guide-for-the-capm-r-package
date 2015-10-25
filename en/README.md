@@ -22,4 +22,4 @@ The purppose of this guide is to show you how to implement the general [workflow
 
 This files can be downloaded [here](https://github.com/oswaldosantos/programming-guide-for-the-capm-r-package) using the "Download ZIP" button at the bottom right.  
 
-Not all `capm` functions will be used and for those used, not all arguments will be used. Please, see the functions' help pages for details.
+We will not use all the `capm` functions and for the those used, only some arguments will be explored. Please, see the functions' help pages for details.

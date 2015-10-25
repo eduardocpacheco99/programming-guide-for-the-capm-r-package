@@ -2,7 +2,7 @@
 
 
 
-Now we are ready to simulate the effect of immigration, abandonment, sterilization and adoption, on owned and stray population dynamics. `SolveIASA` function uses many parameters to run a mathematical model of population dynamics. Some parameters are from the owned population and others from the stray population (to see the meaning of each parameter abbreviation, see the help page for `SolveIASA`).  
+Now we are ready to simulate the effect of immigration, abandonment, sterilization and adoption, on owned and stray population dynamics. `SolveIASA` function uses many parameters to run a mathematical model of population dynamics. Some parameters are from the owned population and others from the stray population (the help page for `SolveIASA` descrbies parameter abbreviation).  
 
 We have estimates for almost all parameters of the owned population but we have no estimates for the stray population. Based on literature and expert opinions, we can define subjective estimates for the stray population (in the next section we will assess how much the subjective estimates compromises the model results).
 

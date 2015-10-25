@@ -2,7 +2,7 @@
 
 
 
-For two-stage cluster designs (see previous section), it is almost necessary to map the Primary Sampling Units (PSU) in order to know where we need to go. Fortunately, the `capm` has a function to locate the PSU's. If we have a shapefile of the PSU's, we are done - as in this case. In the working directory, there are five files named as "santos", each one with a different extension. All those files are a shapefile representation of the PSU's from the sampled area (Santos city). I got the files in the bureau of statistics mentioned in the previous section.  
+For two-stage cluster designs (see previous section), it is almost necessary to map the PSU's in order to know where we need to go. Fortunately, the `capm` has a function to map the PSU's. If we have a shapefile of the PSU's, we are done - as in this case. In the working directory, there are five files named as "santos", each one with a different extension. All those files are a shapefile representation of the PSU's from the sampled area (Santos city). I got the files in the bureau of statistics mentioned in the previous section.  
 
 
 ```r
@@ -11,9 +11,9 @@ For two-stage cluster designs (see previous section), it is almost necessary to 
 +           id = 1)
 ```
 
-`MapkmlPSU` creates a kml file for each selected PSU plus a kml with all selected PSU's. Those kml files can be opened with Google Hearth just clicking on them. [QGIS](http://qgis.org) is an open source tool, which can also render different layers as a background to the kml files. 
+`MapkmlPSU` creates a "kml" file for each selected PSU plus a kml with all selected PSU's. Those kml files can be opened with Google Hearth just clicking on them. [QGIS](http://qgis.org) is an open source tool, which can also render different layers as a background to the kml files. 
 
-Of course, R allow us to plot the locations of the selected PSU's. Do not worry if you do not understand the following code snippet, it is just an alternative to Google Hearth or QGIS, which I am using here just to show that you can map in R the selected PSU's.
+Of course, R allow us to plot the locations of the selected PSU's. Do not worry if you do not understand the following code snippet, it is just another alternative to Google Hearth or QGIS.
 
 If "503 Service Unavailable" error appears, try later to see if OSM servers come back (see the help page of `get_openstreetmap`).
 
@@ -21,23 +21,6 @@ If "503 Service Unavailable" error appears, try later to see if OSM servers come
 ```r
 > # The package rgeos must be installed.
 > library(rgdal); library(ggmap); library(ggsn)
-```
-
-```
-Loading required package: sp
-rgdal: version: 1.0-4, (SVN revision 548)
- Geospatial Data Abstraction Library extensions to R successfully loaded
- Loaded GDAL runtime: GDAL 1.11.2, released 2015/02/10
- Path to GDAL shared files: /usr/share/gdal/1.11
- Loaded PROJ.4 runtime: Rel. 4.8.0, 6 March 2012, [PJ_VERSION: 480]
- Path to PROJ.4 shared files: (autodetected)
- Linking to sp version: 1.1-1 
-Loading required package: ggplot2
-Google Maps API Terms of Service: http://developers.google.com/maps/terms.
-Please cite ggmap if you use it: see citation('ggmap') for details.
-```
-
-```r
 > santos <- readOGR(dsn = '.', layer = 'santos')
 ```
 
