@@ -2,7 +2,7 @@
 
 
 
-Ahora estamos listos para simular el efecto de la imigración, el abandono, la esterilización y la adopción, en la dinámica pobacional de perros de casa y callejeros. La función `SolveIASA` usa varios parámetros en un modelo de dinámica poblacional. Algunos parámetros son de perros de casa y otros de callejeros (la página de ajuda de `SolveIASA` describe las abreviaciones de los parámetros).  
+Ahora estamos listos para simular el efecto de la imigración, el abandono, la esterilización y la adopción, en la dinámica pobacional de perros de casa y callejeros. La función `SolveIASA` usa varios parámetros en un modelo de dinámica poblacional. Algunos parámetros son de perros de casa y otros de callejeros (la página de ayuda de `SolveIASA` describe las abreviaciones de los parámetros).  
 
 Tenemos estimativas para casi todos los parámetros de la población de perros de casa pero no tenemos estimativas para la población de callejeros. Con base en la literatura y en la opinión de expertos, podemos definir estimativas subjetivas para la población de callejeros (en la siguiente sección evaluaremos que tanto las estimativas subjetivas comprometen los resultados del modelo).
 
@@ -10,7 +10,7 @@ Valores para definir las condiciones iniciales.
 
 
 ```r
-> # Perros de casos       # Perros callejeros
+> # Perros de casas       # Perros callejeros
 > f1 <- 39565 - 12783;    f2 <- f1 * 0.1
 > fs1 <- 12783;           fs2 <- fs1 * 0.05
 > m1 <- 50289 - 9346;     m2 <- m1 * 0.1
@@ -21,7 +21,7 @@ Valores para definir los parámetros.
 
 
 ```r
-> # Perros de casos       # Perros callejeros
+> # Perros de casas       # Perros callejeros
 > b1 <-  7724;            b2 <- b1 * 0.15
 > df1 <- 0.046;           df2 <- df1 * 1.15
 > dm1 <- 0.053;           dm2 <- dm1 * 1.15
@@ -96,7 +96,9 @@ La dinámica de diferentes subpoblaciones también puede ser plotada (var la pá
 
 ```r
 > PlotModels(model.out = solve.iasa.pt,
-+            variable = 'ns1')
++            variable = 'ns1',
++            x.label = 'Años',
++            y.label = 'Animales domiciliados esterilizados')
 ```
 
 ![plot of chunk point_estimates_simulation](figures/point_estimates_simulation-1.png) 
@@ -116,7 +118,12 @@ También podemos simular escenarios para evaluar la interacción entre diferente
 +     v.range = c(0, .2),
 +     method = 'rk4')
 > PlotModels(model.out = solve.iasa.rg,
-+            variable = 'ns')
++            variable = 'ns',
++            x.label = 'Años',
++            y.label = 'Taza de esterilización',
++            scenarios.label = 'v = (__ * k1)',
++            legend.label = c('Animales\nesterilizados\ndomiciliados',
++                             'Animales\nesterilizados\nno domiciliados'))
 ```
 
 ![plot of chunk scenarios](figures/scenarios-1.png) 

@@ -15,7 +15,7 @@ Intracluster variance                   9.066137e-01
 Intraclass correlation coefficient      2.945012e-01
 ```
 
-Una vez definidos el tamanho y la composición de la muestra final, la selección de unidades de muestreo es una questión de repetir lo que hicimos en las dos primeras secciones, usando los resultados previos (20 UPM y 15 USM por UPM). Recordemos que 2.000000e+01 = 20 y 1.500000e+01 = 15.
+Una vez definidos el tamanho y la composición de la muestra final, la selección de las unidades de muestreo es una questión de repetir lo que hicimos en las dos primeras secciones, usando los resultados previos (20 UPM y 15 USM por UPM). Recordemos que 2.000000e+01 = 20 y 1.500000e+01 = 15.
 
 
 ```r

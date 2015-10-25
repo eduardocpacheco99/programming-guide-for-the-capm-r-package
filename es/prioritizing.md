@@ -17,7 +17,11 @@ Los análisis de sensibilidad global son usadas para evaluar la contribución de
 +     model.out = solve.iasa.pt,
 +     ranges = rg.solve.iasa,
 +     sensv = 'ns1', all = T)
-> PlotGlobalSens(global.out = glob.all.solve.iasa)
+> PlotGlobalSens(global.out = glob.all.solve.iasa,
++                x.label = 'Años',
++                y.label = 'Población',
++                legend.label = 'Rango de sensibilidad',
++                sd.label = 'media +- sd    ')
 ```
 
 ![plot of chunk global_sens_all](figures/global_sens_all-1.png) 
@@ -75,9 +79,9 @@ ns120 26142.76 27736.72
 
 A diferencia de simulaciones basadas solo en estimativas puntuales, aquí obtuvimos un conjunto de posibles resultados representados por una envoltura, en lugar de un único resultado representado por una línea.  
 
-Para algunos parámetros obtuvimos las estimativas usando técnicas de muestreo mientras que para otros, las estimativaas fueron subjetivas. Dado que hay incertezas en relación a los valores exactos de los parámetros, los resultados de las perturbaciones taambién representan nuestras incertezas.  
+Para algunos parámetros obtuvimos las estimativas usando técnicas de muestreo mientras que para otros, las estimativas fueron subjetivas. Dado que hay incertezas en relación a los valores exactos de los parámetros, los resultados de las perturbaciones también representan nuestras incertezas.  
 
-Una questión que surge es: ¿La dinámica poblacional es igualmente sensible a todos los parámetros? Si, no ¿Cuáles son los parametros más influyentes? Una forma de responder estas preguntas consiste en la realización de análisis de sensibilidad global, perturbando un parámetro por vez y fijando los restantes en las estimativas puntuales.
+Una questión que surge es: ¿La dinámica poblacional es igualmente sensible a todos los parámetros? Si no ¿Cuáles son los parametros más influyentes? Una forma de responder estas preguntas consiste en la realización de análisis de sensibilidad global, perturbando un parámetro por vez y fijando los restantes en las estimativas puntuales.
 
 
 ```r
@@ -85,7 +89,11 @@ Una questión que surge es: ¿La dinámica poblacional es igualmente sensible a 
 +     model.out = solve.iasa.pt,
 +     ranges = rg.solve.iasa,
 +     sensv = 'ns1', all = F)
-> PlotGlobalSens(global.out = glob.solve.iasa)
+> PlotGlobalSens(global.out = glob.solve.iasa,
++                x.label = 'Años',
++                y.label = 'Población',
++                legend.label = 'Rango de sensibilidad',
++                sd.label = 'media +- sd    ')
 ```
 
 ![plot of chunk global_sens](figures/global_sens-1.png) 
@@ -149,4 +157,4 @@ v     1.5e-01 1.5e-01  1218.5  353.22  1218.5     0.0  2909.6 21
 z     1.6e-02 1.6e-02    99.2   27.03    99.2     0.0   199.4 21
 ```
 
-Al ver las sensibilidades globales de cada parámetro y las sensibilidade locales, es claro que la capacidad de carga de la población de perros de casa es de lejos el parámetro más influyente para el total de perros de casa (cuanto mayor la envoltura (o la barra), mayor la influencia del respectivo parámetro).
+Al ver las sensibilidades globales de cada parámetro y las sensibilidades locales, es claro que la capacidad de carga de la población de perros de casa es de lejos el parámetro más influyente para el total de perros de casa (cuanto mayor la envoltura (o la barra), mayor la influencia del respectivo parámetro).

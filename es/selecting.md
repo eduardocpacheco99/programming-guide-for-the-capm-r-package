@@ -2,10 +2,10 @@
 
 Con el paquete `capm` es posible implementar los siguientes diseños muestrales:  
 * Muestreo aleatorio sistemático  
-* Muestreo aleatório estratificado  
+* Muestreo aleatorio estratificado  
 * Muestreo aleatorio complejo  (diseños por conglomerados en dos etapas con selección probabilítstica proporcional al tamaño)
 
-Implementemos un diseño por conglomerados en dos etapas que es el más desafiante pero también el más apropiado para algunas situaciones (ciudades grandes). El archivo `psu.ssu.csv` contiene datos de la ciudade de Santos, Brasil. Los datos fueron obtenidos en el Instituto Brasileiro de Geografia e Estatística ([IBGE](http://ibge.gov.br)). La primera columna tiene identificadores únicos de los sectores censales, nuestras Unidades Primárias de Muestreo (UPM). La segunda columna contiene el número de residencias en cada UPA. Las residencias son nuestras Unidades Secundárias de Muestreo (USM), que al mismo tiempo son la medida de tamaño de las UPM.
+Implementemos un diseño por conglomerados en dos etapas que es el más desafiante pero también el más apropiado para algunas situaciones (ciudades grandes). El archivo `psu.ssu.csv` contiene datos de la ciudade de Santos, Brasil. Los datos fueron obtenidos en el Instituto Brasileiro de Geografia e Estatística ([IBGE](http://ibge.gov.br)). La primera columna tiene identificadores únicos de los sectores censales, nuestras Unidades Primárias de Muestreo (UPM). La segunda columna contiene el número de residencias en cada UPM. Las residencias son nuestras Unidades Secundárias de Muestreo (USM), que al mismo tiempo son la medida de tamaño de las UPM.
 
 
 Carguemos el paquete e importemos el archivo.
@@ -62,7 +62,7 @@ Todas las UPM son aparentemente iguales devido a la notación científica. Los i
 [1] 652
 ```
 
-El archivo contiene exactamente la información que necesitamos para muestrear UPM con probabilidad proporcional al tamaño (PPT) y con resposición. Si el argumento `write` de `SamplePPS` es definidio como `TRUE`, las UPM seleccionadas serán guardadas en un archivo "csv" que puede ser visto en un software de hojas de cálculo. El resultados tendrá tantas filas com UPM seleccionadas. Recordemos que una UPM puede ser seleccionada más de una vez porque el muestreo es con resposición.  
+El archivo contiene exactamente la información que necesitamos para muestrear UPM con probabilidad proporcional al tamaño (PPT) y con resposición. Si el argumento `write` de `SamplePPS` es definidio como `TRUE`, las UPM seleccionadas serán guardadas en un archivo "csv" que puede ser visto en un software de hojas de cálculo. El resultado tendrá tantas filas como UPM seleccionadas. Recordemos que una UPM puede ser seleccionada más de una vez porque el muestreo es con resposición.  
 
 Si usamos `set.seed(algun_numero)`, la siguiente seudo muestra será siempre la misma. En esta guía usaremos `set.seed(4)` para que todos podamos reproduzir exactamente todos los ejemplos. Sin embargo, en aplicaciones reales no debemos usar `set.seed`.
 
@@ -74,7 +74,7 @@ Si usamos `set.seed(algun_numero)`, la siguiente seudo muestra será siempre la 
 +                        write = FALSE)
 ```
 
-Al inspeccionar el objeto que acabamos de crear podemos ver que la `clase` de los identificadores de las UPM fue convertida a `character`. Esto quiere decir que los identificadores ahora son representados como texto, no como números.
+Al inspeccionar el objeto que acabamos de crear podemos ver que la "clase" de los identificadores de las UPM fue convertida a `character`. Esto quiere decir que los identificadores ahora son representados como texto, no como números.
 
 
 ```r
@@ -101,7 +101,7 @@ Al inspeccionar el objeto que acabamos de crear podemos ver que la `clase` de lo
 6 354850005000174  243
 ```
 
-La selección de las USM es tan simple como la selección anterior. El resultado tendrá tantas filas como USM seleccionadas en cada UPM y tantas columnas com UPM seleccionadas.
+La selección de las USM es tan simple como la selección anterior. El resultado tendrá tantas filas como USM seleccionadas en cada UPM y tantas columnas como UPM seleccionadas.
 
 
 ```r
