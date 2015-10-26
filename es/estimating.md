@@ -1,4 +1,7 @@
 
+```
+## Error in options(width == 66): object 'width' not found
+```
 
 
 

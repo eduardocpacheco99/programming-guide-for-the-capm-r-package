@@ -2,6 +2,7 @@
 library(knitr)
 opts_knit$set(base.dir='./')
 opts_chunk$set(prompt=TRUE, comment='', fig.path='figures/')
+options(width == 66)
 ```
 
 ```{r,results='hide',echo=FALSE}
@@ -58,9 +59,11 @@ ggmap(osm.all.psu, extent = 'device') +
         data = santos.pilot.df,
         aes(x = long, y = lat, fill = PSU)) +
     coord_equal() +
-    geom_path(data = santos.pilot.df, aes(long, lat, group = group),
+    geom_path(data = santos.pilot.df,
+              aes(long, lat, group = group),
               color = 'yellow', size = 1.2) +
-    scalebar(santos.pilot.df, 'bottomleft', dist = 1, dd2km = T,
+    scalebar(santos.pilot.df, 'bottomleft',
+             dist = 1, dd2km = T,
              model = 'WGS84', st.size = 3) +
     north(santos.pilot.df, symbol = 15)
     

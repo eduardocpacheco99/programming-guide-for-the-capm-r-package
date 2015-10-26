@@ -1,4 +1,7 @@
 
+```
+## Error in options(width == 66): object 'width' not found
+```
 
 
 
@@ -55,9 +58,11 @@ It has 1 fields
 +         data = santos.pilot.df,
 +         aes(x = long, y = lat, fill = PSU)) +
 +     coord_equal() +
-+     geom_path(data = santos.pilot.df, aes(long, lat, group = group),
++     geom_path(data = santos.pilot.df,
++               aes(long, lat, group = group),
 +               color = 'yellow', size = 1.2) +
-+     scalebar(santos.pilot.df, 'bottomleft', dist = 1, dd2km = T,
++     scalebar(santos.pilot.df, 'bottomleft',
++              dist = 1, dd2km = T,
 +              model = 'WGS84', st.size = 3) +
 +     north(santos.pilot.df, symbol = 15)
 ```
