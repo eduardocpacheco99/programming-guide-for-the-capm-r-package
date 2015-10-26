@@ -1,7 +1,4 @@
 
-```
-## Error in eval(expr, envir, enclos): could not find function "option"
-```
 
 
 
@@ -24,23 +21,6 @@ If "503 Service Unavailable" error appears, try later to see if OSM servers come
 ```r
 > # The package rgeos must be installed.
 > library(rgdal); library(ggmap); library(ggsn)
-```
-
-```
-Loading required package: sp
-rgdal: version: 1.0-4, (SVN revision 548)
- Geospatial Data Abstraction Library extensions to R successfully loaded
- Loaded GDAL runtime: GDAL 1.11.2, released 2015/02/10
- Path to GDAL shared files: /usr/share/gdal/1.11
- Loaded PROJ.4 runtime: Rel. 4.8.0, 6 March 2012, [PJ_VERSION: 480]
- Path to PROJ.4 shared files: (autodetected)
- Linking to sp version: 1.1-1 
-Loading required package: ggplot2
-Google Maps API Terms of Service: http://developers.google.com/maps/terms.
-Please cite ggmap if you use it: see citation('ggmap') for details.
-```
-
-```r
 > santos <- readOGR(dsn = '.', layer = 'santos')
 ```
 

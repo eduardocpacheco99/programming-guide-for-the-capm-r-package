@@ -1,7 +1,4 @@
 
-```
-## Error in eval(expr, envir, enclos): could not find function "option"
-```
 
 With the `capm` package it is possible to implement three sample designs:  
 * Systematic random sampling  
@@ -80,13 +77,13 @@ Inspecting the object we have just created, we can see that the PSU's identifier
 
 
 ```r
-> str(pilot.psu)
+> str(pilot.psu, vec.len = 1)
 ```
 
 ```
 'data.frame':	10 obs. of  2 variables:
- $ selected.psu: chr  "354850005000377" "354850005000012" "354850005000195" "354850005000185" ...
- $ size        : int  210 409 288 224 227 243 77 262 475 247
+ $ selected.psu: chr  "354850005000377" ...
+ $ size        : int  210 409 ...
 ```
 
 ```r
