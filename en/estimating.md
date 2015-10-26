@@ -2,6 +2,8 @@
 
 
 
+## Estimating demographic characteristics
+
 Having defined the final sample, suppose we went to visit all the selected households and the collected data were recorded in a file called `survey.data.csv` (the help page for `survey.data` describes the variables).
 
 

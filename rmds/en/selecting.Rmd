@@ -5,6 +5,8 @@ opts_chunk$set(prompt=TRUE, comment='', fig.path='figures/')
 options(width = 66)
 ```
 
+## Selecting sampling units
+
 With the `capm` package it is possible to implement three sample designs:  
 * Systematic random sampling  
 * Stratified random sampling  

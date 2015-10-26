@@ -1,5 +1,7 @@
 
 
+## Selecting sampling units
+
 With the `capm` package it is possible to implement three sample designs:  
 * Systematic random sampling  
 * Stratified random sampling  

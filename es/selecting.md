@@ -3,6 +3,8 @@
 ## Error in options(width == 66): object 'width' not found
 ```
 
+## Seleccionando unidades muestrales
+
 Con el paquete `capm` es posible implementar los siguientes diseños muestrales:  
 * Muestreo aleatorio sistemático  
 * Muestreo aleatorio estratificado  

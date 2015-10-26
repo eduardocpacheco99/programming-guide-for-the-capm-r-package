@@ -2,6 +2,8 @@
 
 
 
+## Building population pyramids
+
 Population pyramids summarizes the basic composition of a population. At minimum, they are built from "age" and "sex"" variables but they can be conditioned on a third categorical variable. Those variables must be specified in the respective function arguments.
 
 

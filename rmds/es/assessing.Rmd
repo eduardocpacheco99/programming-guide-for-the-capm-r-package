@@ -9,6 +9,8 @@ options(width == 66)
 library(capm)
 ```
 
+## Evaluando el efecto de las intervenciones
+
 Ahora estamos listos para simular el efecto de la imigración, el abandono, la esterilización y la adopción, en la dinámica pobacional de perros de casa y callejeros. La función `SolveIASA` usa varios parámetros en un modelo de dinámica poblacional. Algunos parámetros son de perros de casa y otros de callejeros (la página de ayuda de `SolveIASA` describe las abreviaciones de los parámetros).  
 
 Tenemos estimativas para casi todos los parámetros de la población de perros de casa pero no tenemos estimativas para la población de callejeros. Con base en la literatura y en la opinión de expertos, podemos definir estimativas subjetivas para la población de callejeros (en la siguiente sección evaluaremos que tanto las estimativas subjetivas comprometen los resultados del modelo).

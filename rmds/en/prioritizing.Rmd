@@ -48,6 +48,8 @@ solve.iasa.pt <- SolveIASA(
   time = 0:20, method = 'rk4')
 ```
 
+## Prioritizing interventions
+
 Finally, we will make global and local sensitivity analysis to classify the parameters according to the influence they have. Because population management interventions are mechanisms to modify (or to maintain stable) population parameters, classification of parameters is also a classification for interventions, or in other words, a way to prioritize interventions.
 
 Global sensitivity analysis are used to assess the contributions of the model parameters to the variation in the model output. With global sensitivity analysis, it is possible to add uncertainties to all parameters and assess the effect that they produce together in the population dynamics. In the next code chunk we will simultaneously perturbate each parameter in an interval whose lower and upper limits were, respectively, 10% lower and 10% higher than the point estimate (for the carrying capacities, we will not consider values lower than the point estimates).

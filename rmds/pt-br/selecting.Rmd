@@ -2,8 +2,10 @@
 library(knitr)
 opts_knit$set(base.dir='./')
 opts_chunk$set(prompt=TRUE, comment='', fig.path='figures/')
-options(width == 66)
+options(width = 66)
 ```
+
+## Selecionando unidades amostrais
 
 Com o pacote `capm` é possível implementar os siguientes desenhos amostrais:  
 * Amostragem aleatória sistemática  

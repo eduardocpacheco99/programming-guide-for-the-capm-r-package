@@ -2,6 +2,8 @@
 
 
 
+## Calculating sample size
+
 Continuing with the two-stage cluster design, there are two sources of data that we need to calculate the sample size and composition. The first is the `psu.ssu` object we that we created in the first section. The second contains the data we have hypothetically collected in the pilot sample we designed above. The `pilot.csv` file contains as many rows as households visited in the pilot. The first column contains identifiers for the PSU to which the respective household belongs to. The second column contains the number of dogs observed in the households. Having these sources of data, we just need to define the level of confidence we want, the error we are ready to accept and an estimate of cost. The last is the ratio between the cost associated with visiting a PSU and the cost associated with making an interview. 
 
 

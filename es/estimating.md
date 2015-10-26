@@ -5,6 +5,8 @@
 
 
 
+## Estimando características demográficas
+
 Habiendo definido la muestra final, supongamos que fuimos a visitar todas las residencias seleccionadas y los datos colectados fueron guardados en un archivo llamado `survey.data.csv` (la página de ayuda de `survey.data` describe las variables).
 
 

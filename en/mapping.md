@@ -2,6 +2,8 @@
 
 
 
+## Mapping sampling units
+
 For two-stage cluster designs (see previous section), it is almost necessary to map the PSU's in order to know where we need to go. Fortunately, the `capm` has a function to map the PSU's. If we have a shapefile of the PSU's, we are done - as in this case. In the working directory, there are five files named as "santos", each one with a different extension. All those files are a shapefile representation of the PSU's from the sampled area (Santos city). I got the files in the bureau of statistics mentioned in the previous section.  
 
 

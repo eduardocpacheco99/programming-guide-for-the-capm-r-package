@@ -1,7 +1,6 @@
 
-```
-## Error in options(width == 66): object 'width' not found
-```
+
+## Selecionando unidades amostrais
 
 Com o pacote `capm` é possível implementar os siguientes desenhos amostrais:  
 * Amostragem aleatória sistemática  

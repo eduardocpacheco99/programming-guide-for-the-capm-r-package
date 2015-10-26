@@ -1,9 +1,8 @@
 
-```
-## Error in options(width == 66): object 'width' not found
-```
 
 
+
+## Avaliando os efeitos das intervenções
 
 Agora estamos prontos para simular o efeito da imigração, o abandono, a esterilização e a adoção, na dinámica populacional de cães domiciliados e não domiciliados. A função `SolveIASA` usa vários parámetros em um modelo de dinâmica populacional. Alguns parâmetros são de cães domiciliados e outros de cães não domiciliados (a página de ajuda de `SolveIASA` describe las abreviaciones de os parámetros).  
 

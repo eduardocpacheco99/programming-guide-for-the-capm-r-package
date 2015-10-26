@@ -5,6 +5,8 @@
 
 
 
+## Construyendo pirámides poblacionales
+
 Las pirámides poblaciones resumen la composición básica de la población. Como mínimo, son construidas a partir de las variables "edad" y "sexo", pero pueden estar condicionadas por una tercera variable categórica. Las variables deben ser espcificadas en los respectivos argumentos de la función.
 
 Antes de crear las pirámides, cambiemos las categorías de las variables "sexo" y "esterilizado" para que el texto de los gráficos quede en español.

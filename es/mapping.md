@@ -5,6 +5,8 @@
 
 
 
+## Mapeando unidades muestrales
+
 Para el diseño por conglomerados en dos etapas (ver sección anterior), casi siempre es necesario mapear las UPM para saber a donde debemos ir. Afortunadamente el `capm` tiene una función para mapear las UPM. Si tenemos un shapefile de las UPM estamos hechos - como en este caso. El el área de trabajo hay cinco archivos llamados "santos", cada uno con una extensión diferente. Todos estos archivos son una representación shapefile de las UPM del área de muestreo (ciudad de Santos). Estos archivos también fueron obtenidos en el IBGE (ver sección anterior).
 
 

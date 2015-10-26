@@ -1,9 +1,8 @@
 
-```
-## Error in options(width == 66): object 'width' not found
-```
 
 
+
+## Construindo pirâmides populacionais
 
 As pirâmides populacionais resumem a composição básica da população. Como mínimo, são construidas a partir das variáveis "idade" e "sexo", mas podem estar condicionadas por uma terceira variável categórica. As variáveis devem ser espcificadas nos respectivos argumentos da função.  
 

@@ -1,9 +1,8 @@
 
-```
-## Error in options(width == 66): object 'width' not found
-```
 
 
+
+## Calculando o tamanho amostral
 
 Continuando com o diseño por conglomerados em dois etágios, há dois fontes de dados que precisa para calcular o tamaño e a composição amostral. A primeira é o objeto `psu.ssu` que criamos na primeira seção. A segunda fonte contém dados que coletamos hipoteticamente na amostra piloto que desenhamos anteriormente. O arquivo `pilot.csv` contém tantas linhas como domicílios visitados no piloto. A primeira coluna contém os identificadores das UPA à que pertence o respectivo domicílio. A segunda coluna contém o número de cães observados em cada domicílio. Com essas duas fuentes de dados, podemos definir o nivel de confiançaa que queremos, o erro que estmos dispostos a aceitar e uma estimativa do custo. A última é a razão entre o custo associado à visita de uma UPA e o custo associada à realização de uma entrevista.  
 

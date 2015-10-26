@@ -2,7 +2,7 @@
 library(knitr)
 opts_knit$set(base.dir='./')
 opts_chunk$set(prompt=TRUE, comment='', fig.path='figures/')
-options(width == 66)
+options(width = 66)
 ```
 
 ```{r,results='hide',echo=FALSE}
@@ -47,6 +47,8 @@ solve.iasa.pt <- SolveIASA(
   init = init.solve.iasa,
   time = 0:20, method = 'rk4')
 ```
+
+## Priorizando intervenções
 
 Para finalizar, faremos análises de sensibilidade global e local para classificar os parâmetros de acordo com a influência que exercen. Dado que as intervenções de manejo populacional são mecanismos para modificar (o mantener estáveis) parâmetros populacionais, a classificação de parâmetros é também uma classificação de intervenções, ou em outras palavras, uma forma de priorizar as intervenções.
 
