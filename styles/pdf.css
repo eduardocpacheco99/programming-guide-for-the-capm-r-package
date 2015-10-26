@@ -1,9 +1,5 @@
 /* CSS for pdf */
-header {
+.book-header > h1 {
     opacity: 0;
-    height: 0.01px;
-}
-#footer {
-    opacity: 1;
-    height: 0.01px;
+    color: red;
 }
