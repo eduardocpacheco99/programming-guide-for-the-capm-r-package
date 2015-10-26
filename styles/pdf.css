@@ -1,4 +1,9 @@
 /* CSS for pdf */
-header, footer {
+header {
     opacity: 0;
+    background-color: #dd1155;
+}
+#footer {
+    opacity: 0;
+    background-color: #dd1155;
 }
