@@ -2,11 +2,6 @@
 library(knitr)
 opts_knit$set(base.dir='./')
 opts_chunk$set(prompt=TRUE, comment='', fig.path='figures/')
-# See yihui.name/knitr/options for more Knitr options.
-##### Put other setup R code here
-
-
-# end setup chunk
 ```
 
 ```{r,results='hide',echo=FALSE}
@@ -64,22 +59,30 @@ glob.all.solve.iasa <- CalculateGlobalSens(
     model.out = solve.iasa.pt,
     ranges = rg.solve.iasa,
     sensv = 'ns1', all = T)
-PlotGlobalSens(global.out = glob.all.solve.iasa)
+PlotGlobalSens(global.out = glob.all.solve.iasa,
+               x.label = 'Años',
+               y.label = 'Población',
+               legend.label = 'Rango de sensibilidad',
+               sd.label = 'media +- sd    ')
 glob.all.solve.iasa
 ```
 
 A diferencia de simulaciones basadas solo en estimativas puntuales, aquí obtuvimos un conjunto de posibles resultados representados por una envoltura, en lugar de un único resultado representado por una línea.  
 
-Para algunos parámetros obtuvimos las estimativas usando técnicas de muestreo mientras que para otros, las estimativaas fueron subjetivas. Dado que hay incertezas en relación a los valores exactos de los parámetros, los resultados de las perturbaciones taambién representan nuestras incertezas.  
+Para algunos parámetros obtuvimos las estimativas usando técnicas de muestreo mientras que para otros, las estimativas fueron subjetivas. Dado que hay incertezas en relación a los valores exactos de los parámetros, los resultados de las perturbaciones también representan nuestras incertezas.  
 
-Una questión que surge es: ¿La dinámica poblacional es igualmente sensible a todos los parámetros? Si, no ¿Cuáles son los parametros más influyentes? Una forma de responder estas preguntas consiste en la realización de análisis de sensibilidad global, perturbando un parámetro por vez y fijando los restantes en las estimativas puntuales.
+Una questión que surge es: ¿La dinámica poblacional es igualmente sensible a todos los parámetros? Si no ¿Cuáles son los parametros más influyentes? Una forma de responder estas preguntas consiste en la realización de análisis de sensibilidad global, perturbando un parámetro por vez y fijando los restantes en las estimativas puntuales.
 
 ```{r global_sens}
 glob.solve.iasa <- CalculateGlobalSens(
     model.out = solve.iasa.pt,
     ranges = rg.solve.iasa,
     sensv = 'ns1', all = F)
-PlotGlobalSens(global.out = glob.solve.iasa)
+PlotGlobalSens(global.out = glob.solve.iasa,
+               x.label = 'Años',
+               y.label = 'Población',
+               legend.label = 'Rango de sensibilidad',
+               sd.label = 'media +- sd    ')
 head(glob.solve.iasa)
 ```
 
@@ -93,4 +96,4 @@ PlotLocalSens(local.out = local.solve.iasa)
 summary(local.solve.iasa)
 ```
 
-Al ver las sensibilidades globales de cada parámetro y las sensibilidade locales, es claro que la capacidad de carga de la población de perros de casa es de lejos el parámetro más influyente para el total de perros de casa (cuanto mayor la envoltura (o la barra), mayor la influencia del respectivo parámetro).
+Al ver las sensibilidades globales de cada parámetro y las sensibilidades locales, es claro que la capacidad de carga de la población de perros de casa es de lejos el parámetro más influyente para el total de perros de casa (cuanto mayor la envoltura (o la barra), mayor la influencia del respectivo parámetro).
