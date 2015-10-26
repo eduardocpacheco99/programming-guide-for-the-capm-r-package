@@ -1,6 +1,7 @@
 setwd('~/Documents/projects/programming-guide-for-the-capm-r-package/rmds/en')
 library(knitr)
 library(markdown)
+rm(list = ls())
 
 ## Selecting sampling units
 knit('selecting.Rmd')
