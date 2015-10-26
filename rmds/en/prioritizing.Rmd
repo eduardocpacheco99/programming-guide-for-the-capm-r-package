@@ -2,11 +2,7 @@
 library(knitr)
 opts_knit$set(base.dir='./')
 opts_chunk$set(prompt=TRUE, comment='', fig.path='figures/')
-# See yihui.name/knitr/options for more Knitr options.
-##### Put other setup R code here
-
-
-# end setup chunk
+options(width = 66)
 ```
 
 ```{r,results='hide',echo=FALSE}
