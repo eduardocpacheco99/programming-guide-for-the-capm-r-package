@@ -6,9 +6,9 @@
 
 ## Priorizando intervenções
 
-Para finalizar, faremos análises de sensibilidade global e local para classificar os parâmetros de acordo com a influência que exercen. Dado que as intervenções de manejo populacional são mecanismos para modificar (o mantener estáveis) parâmetros populacionais, a classificação de parâmetros é também uma classificação de intervenções, ou em outras palavras, uma forma de priorizar as intervenções.
+Para finalizar, faremos análises de sensibilidade global e local para classificar os parâmetros de acordo com a influência que exercem. Dado que as intervenções de manejo populacional são mecanismos para modificar (o mantener estáveis) parâmetros populacionais, a classificação de parâmetros é também uma classificação de intervenções, ou em outras palavras, uma forma de priorizar as intervenções.
 
-As análises de sensibilidade global são usadas para avaliar a contribução dos parâmetros do modelo, na variação dos resultados. Com as análises de sensibilidade global é possível adicionar incertezas a todos os parâmetros e avaliar o efeito que produzem conjuntamente na dinámica populacional. A continuação perturbaremos simultaneamente cada parâmetro em um intervalo cuyos limites inferior e superior são respectivamente, 10% menores e 10% superiores às estimativas pontuais (para as capacidades de suporte, no consideraremos valores menores do que as estimativas pontuais).
+As análises de sensibilidade global são usadas para avaliar a contribução dos parâmetros do modelo, na variação dos resultados. Com as análises de sensibilidade global é possível adicionar incertezas a todos os parâmetros e avaliar o efeito que produzem conjuntamente na dinámica populacional. A continuação perturbaremos simultaneamente cada parâmetro em um intervalo cujos limites inferior e superior são respectivamente, 10% menores e 10% superiores às estimativas pontuais (para as capacidades de suporte, no consideraremos valores menores do que as estimativas pontuais).
 
 
 ```r
@@ -79,11 +79,11 @@ ns119 24861.55 26183.59 27772.80
 ns120 24799.98 26142.76 27736.72
 ```
 
-A diferênla de simulações baseadas séó em estimativas pontuais, aquí obtivemos um conjunto de possíveis resultados representados por um envelope, no lugar de um único resultado representado por uma linha.  
+A diferênça de simulações baseadas só em estimativas pontuais, aqui obtivemos um conjunto de possíveis resultados representados por um envelope, no lugar de um único resultado representado por uma linha.  
 
-Para alguns parâmetros obtivemos as estimativas usando técnicas de amostragem, mas para otros, as estimativas foram subjetivas. Dado que há incertezas em relação aos valores exatos dos parâmetros, os resultados das perturbações também representam as nossas incertezas.  
+Para alguns parâmetros obtivemos as estimativas usando técnicas de amostragem, mas para outros, as estimativas foram subjetivas. Dado que há incertezas em relação aos valores exatos dos parâmetros, os resultados das perturbações também representam as nossas incertezas.  
 
-Una questão que surge é: A dinámica populacional é igualmente sensível a todos os parâmetros? Se não, quais os parametros mais influentes? Uma forma de responder essas perguntas consiste na realização de análises de sensibilidade global, perturbando um parámetro por vez e fixando os restantes nas estimativas pontuais.
+Una questão que surge é: a dinámica populacional é igualmente sensível a todos os parâmetros? Se não, quais os parâmetros mais influentes? Uma forma de responder essas perguntas consiste na realização de análises de sensibilidade global, perturbando um parámetro por vez e fixando os restantes nas estimativas pontuais.
 
 
 ```r
@@ -121,7 +121,7 @@ ns14 27743.21 27743.64 27743.98    b1
 ns15 27837.28 27839.60 27841.45    b1
 ```
 
-Outra forma consiste na realização de análises de sensibilidade local. Aquí a idea é realizar pequnas perturbações e determinar a sensibilidade de cada parâmetro usando medidas de influencia.
+Outra forma consiste na realização de análises de sensibilidade local. Aqui a ideia é realizar pequnas perturbações e determinar a sensibilidade de cada parâmetro usando medidas de influência.
 
 
 ```r
@@ -159,4 +159,4 @@ v     1.5e-01 1.5e-01  1218.5  353.22  1218.5     0.0  2909.6 21
 z     1.6e-02 1.6e-02    99.2   27.03    99.2     0.0   199.4 21
 ```
 
-Ao ver as sensibilidades globais de cada parâmetro e as sensibilidades locais, é claro que a capacidade de suporte da população de cães domiciliados é de longe o parâmetro mais influente para o total de cães domiciliados (cuanto maior o envelope (o a barra), mayor a influencia do respectivo parâmetro).
+Ao ver as sensibilidades globais de cada parâmetro e as sensibilidades locais, é claro que a capacidade de suporte da população de cães domiciliados é de longe o parâmetro mais influente para o total de cães domiciliados (quanto maior o envelope (o a barra), maior a influência do respectivo parâmetro).

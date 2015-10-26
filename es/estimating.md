@@ -36,7 +36,7 @@ Habiendo definido la muestra final, supongamos que fuimos a visitar todas las re
 6         yes        no           no                    <NA>
 ```
 
-Para estimar los parámetros popblacionales, el primer paso es definir el diseño muestral que dió origen a los datos. Para hacerlo, necesitamos un archivo con todas las unidades muestrales de la población (`psu.ssu`) y un archivo con los datos muestrales (`survey.data`). Este último archivo, debe tener una columna con las UPM, otra con las USM y otra con el número de UPM incluídas en la muestra (si una UPM fue seleccionada más de una vez, cada ocurrencia debe ser contada).
+Para estimar los parámetros poblacionales, el primer paso es definir el diseño muestral que dió origen a los datos. Para hacerlo, necesitamos un archivo con todas las unidades muestrales de la población (`psu.ssu`) y un archivo con los datos muestrales (`survey.data`). Este último archivo, debe tener una columna con las UPM, otra con las USM y otra con el número de UPM incluídas en la muestra (si una UPM fue seleccionada más de una vez, cada ocurrencia debe ser contada).
 
 
 ```r
@@ -47,7 +47,7 @@ Para estimar los parámetros popblacionales, el primer paso es definir el diseñ
 +                        psu.2cd = 20)
 ```
 
-Definir el tipo de estimativa para cda variable es facil.
+Definir el tipo de estimativa para cada variable es facil.
 
 
 ```r
@@ -55,7 +55,7 @@ Definir el tipo de estimativa para cda variable es facil.
 +                'prop', 'total', rep('prop', 8))
 ```
 
-Es conveninente confirmar que hemos definido el tipo de estimativa que queremos.
+Es conveniente confirmar que hemos definido el tipo de estimativa que queremos.
 
 
 ```r
@@ -191,7 +191,7 @@ podemos crear un diseño para cada sexo.
 > design.m <- subset(design.sex, sex == 'Male')
 ```
 
-A partir de aqui no hay nada nuevo.
+A partir de aquí no hay nada nuevo.
 
 
 ```r

@@ -5,9 +5,9 @@
 Com o pacote `capm` é possível implementar os siguientes desenhos amostrais:  
 * Amostragem aleatória sistemática  
 * Amostragem aleatória estratificada  
-* Amostragem aleatória complexa  (disenhos por conglomerados em dois estágios com selecção probabilítstica proporcional ao tamanho)
+* Amostragem aleatória complexa  (desenhos por conglomerados em dois estágios com selecção probabilítstica proporcional ao tamanho)
 
-Implementemos un desenho por conglomerados en dois estágio que é o mais desafiante mas tambiem o mais apropriado para algumas situações (cidades grandes). O arquivo `psu.ssu.csv` contém dados da cidade de Santos, Brasil. Os dados foram obtidos no Instituto Brasileiro de Geografia e Estatística ([IBGE](http://ibge.gov.br)). A primeira colmna tem identificadores únicos dos setores censitários, a nossas Unidades Primárias de Amostragem (UPA). A segunda coluna contém o número de residências eM cada UPA. As residencias as nossas Unidades Secundárias de Amostragem (USA), que ao mesmo tempo são a medida do tamanho das UPA.
+Implementemos um desenho por conglomerados em dois estágios que é o mais desafiante mas também o mais apropriado para algumas situações (cidades grandes). O arquivo `psu.ssu.csv` contém dados da cidade de Santos, Brasil. Os dados foram obtidos no Instituto Brasileiro de Geografia e Estatística ([IBGE](http://ibge.gov.br)). A primeira colmna tem identificadores únicos dos setores censitários, a nossas Unidades Primárias de Amostragem (UPA). A segunda coluna contém o número de domicílios em cada UPA. Os domicílios as nossas Unidades Secundárias de Amostragem (USA), que ao mesmo tempo são a medida do tamanho das UPA.
 
 
 Carreguemos o paquete e importemos el arquivo.
@@ -18,7 +18,7 @@ Carreguemos o paquete e importemos el arquivo.
 > psu.ssu <- read.csv(file = 'psu.ssu.csv')
 ```
 
-Podemos ver que há 652 UPA e as seis primerias linhas nós dão uma ideia dos dados.
+Podemos ver que há 652 UPA e as seis primeiras linhas nós dão uma ideia dos dados.
 
 
 ```r
@@ -64,9 +64,9 @@ Todas as UPA são aparentemente iguais devido à notação científica. Os ident
 [1] 652
 ```
 
-O arquivo contém exactamente a información que precisamos para amostrar UPA com probabilidad proporcional ao tamaño (PPT) e com resposição. Se o argumento `write` de `SamplePPS` é definidio como `TRUE`, as UPA selecionadas serão salvas em um arquivo "csv" que pode ser visto em um software de folhas de cálculo. O resultado terá tantas linhas como UPA selecionadas. Lembremos que uma UPA pode ser seleccionada mais de uma vez porque a amostragem é com resposição.  
+O arquivo contém exatamente a informação que precisamos para amostrar UPA com probabilidad proporcional ao tamaño (PPT) e com resposição. Se o argumento `write` de `SamplePPS` é definidio como `TRUE`, as UPA selecionadas serão salvas em um arquivo "csv" que pode ser visto em um software de folhas de cálculo. O resultado terá tantas linhas como UPA selecionadas. Lembremos que uma UPA pode ser seleccionada mais de uma vez porque a amostragem é com resposição.  
 
-Se usamos `set.seed(algun_numero)`, a seguiente pseudo amostra será sempre a mesma. Neste gua usaremos `set.seed(4)` para que todos podamos reproduzir exatamente todos os exemplos. Não entanto, em aplicaciones reaies no devemos usar `set.seed`.
+Se usamos `set.seed(algun_numero)`, a seguiente pseudo amostra será sempre a mesma. Neste guia usaremos `set.seed(4)` para que todos podamos reproduzir exatamente todos os exemplos. Não entanto, em aplicaciones reaies no devemos usar `set.seed`.
 
 
 ```r
@@ -76,7 +76,7 @@ Se usamos `set.seed(algun_numero)`, a seguiente pseudo amostra será sempre a me
 +                        write = FALSE)
 ```
 
-Ao inspeccionar o objeto que acabamos de criar podemos ver que a "clase" dos identificadores das UPA foi convertida para `character`. Isto quer dizer que os identificadores agora são representados como texto, no como números.
+Ao inspecionar o objeto que acabamos de criar podemos ver que a "clase" dos identificadores das UPA foi convertida para `character`. Isto quer dizer que os identificadores agora são representados como texto, no como números.
 
 
 ```r
@@ -103,7 +103,7 @@ Ao inspeccionar o objeto que acabamos de criar podemos ver que a "clase" dos ide
 6 354850005000174  243
 ```
 
-A seleção das USA é tão simples como a selecção anterior. O resultado terá tantas linhas como USA selecionadas em cada UPA e tantas colunas como UPA selecionadas.
+A seleção das USA é tão simples como a seleção anterior. O resultado terá tantas linhas como USA selecionadas em cada UPA e tantas colunas como UPA selecionadas.
 
 
 ```r
@@ -113,7 +113,7 @@ A seleção das USA é tão simples como a selecção anterior. O resultado ter�
 +     su = 5, write = FALSE)
 ```
 
-Vejamos as primeiras dos colunas para ter uma ideia.
+Vejamos as primeiras duas colunas para ter uma ideia.
 
 
 ```r

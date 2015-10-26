@@ -1,10 +1,10 @@
 # Guia de programação para o pacote do R `capm`
 #### Oswaldo Santos Baquero
 oswaldosant@gmail.com  
-Última revisão: 25 de outubro de 2015
+Última revisão: 26 de outubro de 2015
 <br><br><br><br>
 
-O propósito deste guia é mostrar como implementar o [fluxo de trabalho](http://oswaldosantos.github.io/capm) suportado pelo `capm`, sem entrar em detalhes teóricos ou em implicações práticas (isto seŕa o foco de artígos academicos e documentação complementar).  
+O propósito deste guia é mostrar como implementar o [fluxo de trabalho](http://oswaldosantos.github.io/capm) suportado pelo `capm`, sem entrar em detalhes teóricos ou em implicações práticas (isto seŕa o foco de artígos acadêmicos e documentação complementar).  
  
 #### Pressupostos para reproduzir este guia:
 

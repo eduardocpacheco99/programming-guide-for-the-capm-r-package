@@ -52,7 +52,7 @@ solve.iasa.pt <- SolveIASA(
 
 Para finalizar, haremos análisis de sensibilidad global y local para clasificar los parámetros de acuerdo con la influencia que ejercen. Dado que las intervenciones de manejo poblacional son mecanismos para modificar (o mantener estables) parámetros poblacionales, la clasificación de parámetros es también una clasificación de intervenciones, o en otras palabras, una forma de priorizar las intervenciones.
 
-Los análisis de sensibilidad global son usadas para evaluar la contribución de los parámetros del modelo, en la variación de los resultados. Con los análisis de sensibilidad global es posible adicionar incertezas a todos los parámetros y evaluar el efecto que produzen conjuntamente en la dinámica poblacional. A continuación perturbaremos simultáneamente cada parámetro en un intervalo cuyos límites inferior y superior son respectivamente, 10% menores y 10% superiores a las estimativas puntuales (para las capacidades de carga, no consideraremos valores menores a las estimativas puntuales).
+Los análisis de sensibilidad global son usadas para evaluar la contribución de los parámetros del modelo, en la variación de los resultados. Con los análisis de sensibilidad global es posible adicionar incertezas a todos los parámetros y evaluar el efecto que producen conjuntamente en la dinámica poblacional. A continuación perturbaremos simultáneamente cada parámetro en un intervalo cuyos límites inferior y superior son respectivamente, 10% menores y 10% superiores a las estimativas puntuales (para las capacidades de carga, no consideraremos valores menores a las estimativas puntuales).
 
 ```{r global_sens_all}
 rg.solve.iasa <-

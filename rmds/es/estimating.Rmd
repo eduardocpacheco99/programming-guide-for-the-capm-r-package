@@ -29,7 +29,7 @@ survey.data <- read.csv('survey.data.csv')
 head(survey.data)
 ```
 
-Para estimar los parámetros popblacionales, el primer paso es definir el diseño muestral que dió origen a los datos. Para hacerlo, necesitamos un archivo con todas las unidades muestrales de la población (`psu.ssu`) y un archivo con los datos muestrales (`survey.data`). Este último archivo, debe tener una columna con las UPM, otra con las USM y otra con el número de UPM incluídas en la muestra (si una UPM fue seleccionada más de una vez, cada ocurrencia debe ser contada).
+Para estimar los parámetros poblacionales, el primer paso es definir el diseño muestral que dió origen a los datos. Para hacerlo, necesitamos un archivo con todas las unidades muestrales de la población (`psu.ssu`) y un archivo con los datos muestrales (`survey.data`). Este último archivo, debe tener una columna con las UPM, otra con las USM y otra con el número de UPM incluídas en la muestra (si una UPM fue seleccionada más de una vez, cada ocurrencia debe ser contada).
 
 ```{r}
 design <- DesignSurvey(sample = survey.data,
@@ -39,14 +39,14 @@ design <- DesignSurvey(sample = survey.data,
                        psu.2cd = 20)
 ```
 
-Definir el tipo de estimativa para cda variable es facil.
+Definir el tipo de estimativa para cada variable es facil.
 
 ```{r}
 variables <- c('total', 'prop', 'mean', 'prop',
                'prop', 'total', rep('prop', 8))
 ```
 
-Es conveninente confirmar que hemos definido el tipo de estimativa que queremos.
+Es conveniente confirmar que hemos definido el tipo de estimativa que queremos.
 
 ```{r}
 cbind(names(design$variables), variables)
@@ -94,7 +94,7 @@ design.f <- subset(design.sex, sex == 'Female')
 design.m <- subset(design.sex, sex == 'Male')
 ```
 
-A partir de aqui no hay nada nuevo.
+A partir de aquí no hay nada nuevo.
 
 ```{r}
 # Comillas cerradas exculyen una variable

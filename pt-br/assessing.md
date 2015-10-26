@@ -4,15 +4,15 @@
 
 ## Avaliando os efeitos das intervenções
 
-Agora estamos prontos para simular o efeito da imigração, o abandono, a esterilização e a adoção, na dinámica populacional de cães domiciliados e não domiciliados. A função `SolveIASA` usa vários parámetros em um modelo de dinâmica populacional. Alguns parâmetros são de cães domiciliados e outros de cães não domiciliados (a página de ajuda de `SolveIASA` describe las abreviaciones de os parámetros).  
+Agora estamos prontos para simular o efeito da imigração, o abandono, a esterilização e a adoção, na dinámica populacional de cães domiciliados e não domiciliados. A função `SolveIASA` usa vários parámetros em um modelo de dinâmica populacional. Alguns parâmetros são de cães domiciliados e outros de cães não domiciliados (a página de ajuda de `SolveIASA` descreve as abreviações dos parámetros).  
 
-Temos estimativas para quase todos os parâmetros da população de cães domiciliados mas não temos estimativas para a população de cães não domiciliados. Com base na literatura e na opinião de expertos, podemos definir estimativas subjetivas para a população de não domiciliados (na seguiente seção avaliaremos que tanto as estimativas subjetivas comprometen os resultados do modelo).
+Temos estimativas para quase todos os parâmetros da população de cães domiciliados mas não temos estimativas para a população de cães não domiciliados. Com base na literatura e na opinião de expertos, podemos definir estimativas subjetivas para a população dos não domiciliados (na seguinte seção avaliaremos que tanto as estimativas subjetivas comprometem os resultados do modelo).
 
 Valores para definir as condições iniciais.
 
 
 ```r
-> # cães domiciliadoss       # cães não domiciliados
+> # cães domiciliados     # cães não domiciliados
 > f1 <- 39565 - 12783;    f2 <- f1 * 0.1
 > fs1 <- 12783;           fs2 <- fs1 * 0.05
 > m1 <- 50289 - 9346;     m2 <- m1 * 0.1
@@ -23,7 +23,7 @@ Valores para definir os parâmetros.
 
 
 ```r
-> # cães domiciliadoss       # cães não domiciliados
+> # cães domiciliados     # cães não domiciliados
 > b1 <-  7724;            b2 <- b1 * 0.15
 > df1 <- 0.046;           df2 <- df1 * 1.15
 > dm1 <- 0.053;           dm2 <- dm1 * 1.15
@@ -79,7 +79,7 @@ Podemos estar interessados em que tanto mudam diferentes subpopulações atravé
 [1] At t2, ns1 is 12.94% higher than (or 112.94% times) ns1 at t1.
 ```
 
-e a mudançao absoluta do total de fêmeas não domiciliadas e não esterilizadas, entre o quinto e o décimo ano.
+e a mudança absoluta do total de fêmeas não domiciliadas e não esterilizadas, entre o quinto e o décimo ano.
 
 
 ```r
@@ -93,7 +93,7 @@ e a mudançao absoluta do total de fêmeas não domiciliadas e não esterilizada
 Compared with t1, in t2 fs2 is increased by 54.91
 ```
 
-A dinámica de diferentes subpopulações tambem pode ser plotada (var a página de ajuda de `PlotModels`).
+A dinámica de diferentes subpopulações tambem pode ser plotada (ver a página de ajuda de `PlotModels`).
 
 
 ```r

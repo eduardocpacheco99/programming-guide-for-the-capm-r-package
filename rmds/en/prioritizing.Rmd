@@ -91,4 +91,4 @@ PlotLocalSens(local.out = local.solve.iasa)
 summary(local.solve.iasa)
 ```
 
-Looking at the global sensitivities to each parameters or looking at the local sensitivities, it is clear that carrying capacity for the owned population is by far the more influent parameter for the total number of owned dogs (the greater the envelope (or the bar) the greater the influence of the respective parameter).
+Looking at the global sensitivities to each parameters or looking at the local sensitivities, it is clear that carrying capacity for the owned population is by far the more influential parameter for the total number of owned dogs (the greater the envelope (or the bar) the greater the influence of the respective parameter).

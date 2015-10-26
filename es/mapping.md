@@ -13,11 +13,11 @@ Para el diseño por conglomerados en dos etapas (ver sección anterior), casi si
 +           id = 1)
 ```
 
-`MapkmlPSU` crea un archivo "kml" para cada UPM seleccionada y un "kml" con todas las UPM seleccionadas. Estos archivos pueden ser abiertos con apenas cliando sobre los mismos. [QGIS](http://qgis.org) es una herramienta de código abierto que también "renderiza" capas de base para los archivos "kml". 
+`MapkmlPSU` crea un archivo "kml" para cada UPM seleccionada y un "kml" con todas las UPM seleccionadas. Estos archivos pueden ser abiertos con Google Earth apenas cliando sobre los mismos. [QGIS](http://qgis.org) es una herramienta de código abierto que también "renderiza" capas de base para los archivos "kml". 
 
 Por supuesto, R nos permite plotar las localizaciones de las UPM seleccionadas. No se preocupen si no entienden el siguiente fragmento de código, pués es apenas otra alternativa para Google Earth y QGIS.
 
-Si aparece el error "503 Service Unavailable", debemos intentar más tarde para ver si el servidos OSM vuelve a funcionar (ver la página de ayuda de `get_openstreetmap`).
+Si aparece el error "503 Service Unavailable", debemos intentar más tarde para ver si el servidores OSM vuelve a funcionar (ver la página de ayuda de `get_openstreetmap`).
 
 
 ```r
@@ -68,7 +68,7 @@ It has 1 fields
 
 ![plot of chunk map_all_psu](figures/map_all_psu-1.png) 
 
-Sin importar el método usado para produzir los mapas, debemos diseñar una ruta en el mapa de cada UPM para poder ir por todas las calles. Podemos definir una residencia en un punto arbitrario (localización inferior isquierda) como la primera residencia y a partir de la misma, podemos seguir la ruta contando las residencias (incluyendo los dos lados de los fragmentos de calle totalmente contenidos en la UPM)  
+Sin importar el método usado para producir los mapas, debemos diseñar una ruta en el mapa de cada UPM para poder ir por todas las calles. Podemos definir una residencia en un punto arbitrario (localización inferior isquierda) como la primera residencia y a partir de la misma, podemos seguir la ruta contando las residencias (incluyendo los dos lados de los fragmentos de calle totalmente contenidos en la UPM)  
 
 El siguiente mapa muestra la cuarta UPM seleccionada.
 

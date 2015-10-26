@@ -39,7 +39,7 @@ Podemos ver que hay 652 UPM y las seis primeras filas nos dan una idea de los da
 6 3.5485e+14  46
 ```
 
-Todas las UPM son aparentemente iguales devido a la notación científica. Los identificadores deben ser únicos para cada UPM y para verificar este requerimiento, podemos cambiar la forma de impresión o verificar que el número de diferentes identificadores es igual al número de UPM.
+Todas las UPM son aparentemente iguales debido a la notación científica. Los identificadores deben ser únicos para cada UPM y para verificar este requerimiento, podemos cambiar la forma de impresión o verificar que el número de diferentes identificadores es igual al número de UPM.
 
 
 ```r
@@ -66,7 +66,7 @@ Todas las UPM son aparentemente iguales devido a la notación científica. Los i
 
 El archivo contiene exactamente la información que necesitamos para muestrear UPM con probabilidad proporcional al tamaño (PPT) y con resposición. Si el argumento `write` de `SamplePPS` es definidio como `TRUE`, las UPM seleccionadas serán guardadas en un archivo "csv" que puede ser visto en un software de hojas de cálculo. El resultado tendrá tantas filas como UPM seleccionadas. Recordemos que una UPM puede ser seleccionada más de una vez porque el muestreo es con resposición.  
 
-Si usamos `set.seed(algun_numero)`, la siguiente seudo muestra será siempre la misma. En esta guía usaremos `set.seed(4)` para que todos podamos reproduzir exactamente todos los ejemplos. Sin embargo, en aplicaciones reales no debemos usar `set.seed`.
+Si usamos `set.seed(algun_numero)`, la siguiente seudo muestra será siempre la misma. En esta guía usaremos `set.seed(4)` para que todos podamos reproducir exactamente todos los ejemplos. Sin embargo, en aplicaciones reales no debemos usar `set.seed`.
 
 
 ```r

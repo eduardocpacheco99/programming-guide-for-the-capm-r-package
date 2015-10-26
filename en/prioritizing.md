@@ -151,4 +151,4 @@ v     1.5e-01 1.5e-01  1218.5  353.22  1218.5     0.0  2909.6 21
 z     1.6e-02 1.6e-02    99.2   27.03    99.2     0.0   199.4 21
 ```
 
-Looking at the global sensitivities to each parameters or looking at the local sensitivities, it is clear that carrying capacity for the owned population is by far the more influent parameter for the total number of owned dogs (the greater the envelope (or the bar) the greater the influence of the respective parameter).
+Looking at the global sensitivities to each parameters or looking at the local sensitivities, it is clear that carrying capacity for the owned population is by far the more influential parameter for the total number of owned dogs (the greater the envelope (or the bar) the greater the influence of the respective parameter).

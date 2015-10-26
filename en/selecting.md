@@ -63,9 +63,9 @@ All PSU's are apparently equal due to scientific notation output. The identifier
 [1] 652
 ```
 
-The file contains exactly the information we need to sample PSU's with probability proportional to their sizes (PPS), with replacement. If the `write` argument of `SamplePPS` is set as `TRUE`, selected PSU will be saved in a "csv" file, which can be viewed in a spreadsheet software. The output will have as many rows as selected PSU's. Remember that the a PSU can be selected more than once because sampling is with replacement.   
+The file contains exactly the information we need to sample PSU's with probability proportional to their sizes (PPS), with replacement. If the `write` argument of `SamplePPS` is set as `TRUE`, selected PSU will be saved in a "csv" file, which can be viewed in a spreadsheet software. The output will have as many rows as selected PSU's. Remember that a PSU can be selected more than once because sampling is with replacement.   
 
-If we use `set.seed(some_number)`, the next pseudo random sample always will be the same. In this guide I will use `set.seed(4)` so you can reproduce exactly all the examples. However, in real applications you must not use `set.seed`.
+If we use `set.seed(some_number)`, the next pseudo random sample always will be the same. In this guide we will use `set.seed(4)` so you can reproduce exactly all the examples. However, in real applications you must not use `set.seed`.
 
 
 ```r

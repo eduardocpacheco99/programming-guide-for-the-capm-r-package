@@ -6,13 +6,14 @@
 
 As pirâmides populacionais resumem a composição básica da população. Como mínimo, são construidas a partir das variáveis "idade" e "sexo", mas podem estar condicionadas por uma terceira variável categórica. As variáveis devem ser espcificadas nos respectivos argumentos da função.  
 
-Antes de criar as pirâmides, mudemos as categorias das variáveis "sexo" e "esterilizado" para que o texto dos gráficos fique em português.
+Antes de criararmos as pirâmides, mudemos as categorias das variáveis "sexo" e "esterilizado" para que o texto dos gráficos fique em português.
 
 
 ```r
 > survey.data[ , 4] <- as.character(survey.data[ , 4])
 > survey.data[ , 4] <-
-+     ifelse(survey.data[ , 4] == 'Female', 'Fêmea', 'Macho')
++     ifelse(survey.data[ , 4] == 'Female',
++            'Fêmea', 'Macho')
 > survey.data[ , 4] <- as.factor(survey.data[ , 4])
 > survey.data[ , 6] <- as.character(survey.data[ , 6])
 > survey.data[ , 6] <-

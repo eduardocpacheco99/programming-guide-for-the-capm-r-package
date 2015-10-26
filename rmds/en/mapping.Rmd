@@ -20,7 +20,7 @@ pilot.ssu <- SampleSystematic(
 
 ## Mapping sampling units
 
-For two-stage cluster designs (see previous section), it is almost necessary to map the PSU's in order to know where we need to go. Fortunately, the `capm` has a function to map the PSU's. If we have a shapefile of the PSU's, we are done - as in this case. In the working directory, there are five files named as "santos", each one with a different extension. All those files are a shapefile representation of the PSU's from the sampled area (Santos city). I got the files in the bureau of statistics mentioned in the previous section.  
+For two-stage cluster designs (see previous section), it is almost necessary to map the PSU's in order to know where we need to go. Fortunately, the `capm` has a function to map the PSU's. If we have a shapefile of the PSU's, we are done - as in this case. In the working directory, there are five files named as "santos", each one with a different extension. All those files are a shapefile representation of the PSU's from the sampled area (Santos city). We have got the files in the bureau of statistics mentioned in the previous section.  
 
 ```{r,eval=FALSE}
 MapkmlPSU(shape = 'santos',
@@ -32,7 +32,7 @@ MapkmlPSU(shape = 'santos',
 
 Of course, R allow us to plot the locations of the selected PSU's. Do not worry if you do not understand the following code snippet, it is just another alternative to Google Hearth or QGIS.
 
-If "503 Service Unavailable" error appears, try later to see if OSM servers come back (see the help page of `get_openstreetmap`).
+If "503 Service Unavailable" error appears, try later to see if OSM servers come back (see the help page for `get_openstreetmap`).
 
 ```{r map_all_psu}
 # The package rgeos must be installed.
@@ -71,7 +71,7 @@ ggmap(osm.all.psu, extent = 'device') +
     
 ```
 
-Whatever the method used to produce the maps, we must to scketch a route in the map of each selected PSU in order to go over all streets. We can set a household in an arbitrary point (i.e. the lower left location) as the first household. From it, we can go through the route counting the households (including both sides of streets fragment totally contained in the PSU) and interviewing those that were selected.  
+Whatever the method used to produce the maps, we must to sketch a route in the map of each selected PSU in order to go over all streets. We can set a household in an arbitrary point (i.e. the lower left location) as the first household. From it, we can go through the route counting the households (including both sides of streets fragment totally contained in the PSU) and interviewing those that were selected.  
 
 The following map shows the fourth selected PSU.
 

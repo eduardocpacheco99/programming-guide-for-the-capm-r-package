@@ -4,7 +4,7 @@
 
 ## Evaluando el efecto de las intervenciones
 
-Ahora estamos listos para simular el efecto de la imigración, el abandono, la esterilización y la adopción, en la dinámica pobacional de perros de casa y callejeros. La función `SolveIASA` usa varios parámetros en un modelo de dinámica poblacional. Algunos parámetros son de perros de casa y otros de callejeros (la página de ayuda de `SolveIASA` describe las abreviaciones de los parámetros).  
+Ahora estamos listos para simular el efecto de la inmigración, el abandono, la esterilización y la adopción, en la dinámica pobacional de perros de casa y callejeros. La función `SolveIASA` usa varios parámetros en un modelo de dinámica poblacional. Algunos parámetros son de perros de casa y otros de callejeros (la página de ayuda de `SolveIASA` describe las abreviaciones de los parámetros).  
 
 Tenemos estimativas para casi todos los parámetros de la población de perros de casa pero no tenemos estimativas para la población de callejeros. Con base en la literatura y en la opinión de expertos, podemos definir estimativas subjetivas para la población de callejeros (en la siguiente sección evaluaremos que tanto las estimativas subjetivas comprometen los resultados del modelo).
 
@@ -93,7 +93,7 @@ y el cambio absoluto del total de hembras callejeras no esterilizadas, entre el 
 Compared with t1, in t2 fs2 is increased by 54.91
 ```
 
-La dinámica de diferentes subpoblaciones también puede ser plotada (var la página de ayuda de `PlotModels`).
+La dinámica de diferentes subpoblaciones también puede ser plotada (ver la página de ayuda de `PlotModels`).
 
 
 ```r
@@ -105,7 +105,7 @@ La dinámica de diferentes subpoblaciones también puede ser plotada (var la pá
 
 ![plot of chunk point_estimates_simulation](figures/point_estimates_simulation-1.png) 
 
-También podemos simular escenarios para evaluar la interacción entre diferentes combinaciones de tazas de esterilización, abandono, adopción e imigración. En el siguiente ejemplo crearemos 900 escenarios (50 tazas de esterilización, 3 tazas de abandono, 3 tazas de adopción y 2 tazas de imigración).
+También podemos simular escenarios para evaluar la interacción entre diferentes combinaciones de tazas de esterilización, abandono, adopción e inmigración. En el siguiente ejemplo crearemos 900 escenarios (50 tazas de esterilización, 3 tazas de abandono, 3 tazas de adopción y 2 tazas de inmigración).
 
 
 ```r

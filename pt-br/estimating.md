@@ -36,7 +36,7 @@ Tendo definido a amostra final, suponhamos que fomos a visitar todos os domicíl
 6         yes        no           no                    <NA>
 ```
 
-Para estimar os parámetros populacionais, o primeiro passo é definir o disenho amostral que deu origem aos dados. Para fazer isto, precisamos um arquivo com todas as unidades amostrais da população (`psu.ssu`) é um arquivo com os dados amostrais (`survey.data`). Esse último arquivo, deve ter uma coluna com as UPA, outra com as USA e outra com o número de UPA inclusas na amostra (se uma UPA foi selecionada mais de uma vez, cada ocorrência deve ser contada).
+Para estimar os parámetros populacionais, o primeiro passo é definir o desenho amostral que deu origem aos dados. Para fazer isto, precisamos um arquivo com todas as unidades amostrais da população (`psu.ssu`) e um arquivo com os dados amostrais (`survey.data`). Esse último arquivo deve ter uma coluna com as UPA, outra com as USA e outra com o número de UPA inclusas na amostra (se uma UPA foi selecionada mais de uma vez, cada ocorrência deve ser contada).
 
 
 ```r
@@ -47,7 +47,7 @@ Para estimar os parámetros populacionais, o primeiro passo é definir o disenho
 +                        psu.2cd = 20)
 ```
 
-Definir o tipo de estimativa para cda variável é simples.
+Definir o tipo de estimativa para cada variável é simples.
 
 
 ```r
@@ -55,7 +55,7 @@ Definir o tipo de estimativa para cda variável é simples.
 +                'prop', 'total', rep('prop', 8))
 ```
 
-É conveninente confirmar que definimod o tipo de estimativa que queremos.
+É conveniente confirmar que definimos o tipo de estimativa que queremos.
 
 
 ```r
@@ -80,7 +80,7 @@ Definir o tipo de estimativa para cda variável é simples.
 [14,] "immigrant.sterilized.ly" "prop"   
 ```
 
-Ah=gora estamos prontos para obter as nossas primeiras estimativas.
+Agora estamos prontos para obter as nossas primeiras estimativas.
 
 
 ```r
@@ -154,7 +154,7 @@ Prop.immigrant.sterilized.ly.no      1.035 1.974    16.354
 Prop.immigrant.sterilized.ly.yes     0.256 1.974   132.061
 ```
 
-O resultado anterior é bastante útil mas pode não ser suficiente. Fazamos uma cópia (`sample1`) de um subconjunto de `survey.data`, para estimar o total de animais esterilizados (no lugar da proporção) e para obter estimativas condicionadas pelo sexo.
+O resultado anterior é bastante útil, mas pode não ser suficiente. Façamos uma cópia (`sample1`) de um subconjunto de `survey.data`, para estimar o total de animais esterilizados (no lugar da proporção) e para obter estimativas condicionadas pelo sexo.
 
 
 ```r

@@ -4,7 +4,7 @@
 
 ## Mapeando unidades amostrais
 
-Para el diseño por conglomerados en dos etapas (ver sección anterior), casi siempre es necesario mapear las UPM para saber a donde debemos ir. Afortunadamente el `capm` tiene una función para mapear las UPM. Si tenemos un shapefile de las UPM estamos hechos - como en este caso. El el área de trabajo hay cinco archivos llamados "santos", cada uno con una extensión diferente. Todos estos archivos son una representación shapefile de las UPM del área de muestreo (ciudad de Santos). Estos archivos también fueron obtenidos en el IBGE (ver sección anterior).
+Para o desenho por conglomerados em dois estágios (ver secção anterior), quase sempre é necesario mapear as UPA para saber a donde debemos ir. Afortunadamente o `capm` tem uma função para mapear as UPA. Se temos um shapefile das UPA estamos feitos - como neste caso. Na área de trabalho há cinco arquivos chamados "santos", cada um com uma extenção diferente. Todos esses arquivos são uma representação shapefile das UPA da área de amostragem (cidade de Santos). Esses arquivos também foram obtidos no IBGE (ver seção anterior).
 
 
 ```r
@@ -13,16 +13,33 @@ Para el diseño por conglomerados en dos etapas (ver sección anterior), casi si
 +           id = 1)
 ```
 
-`MapkmlPSU` crea un archivo "kml" para cada UPM seleccionada y un "kml" con todas las UPM seleccionadas. Estos archivos pueden ser abiertos con apenas cliando sobre los mismos. [QGIS](http://qgis.org) es una herramienta de código abierto que también "renderiza" capas de base para los archivos "kml". 
+`MapkmlPSU` cria um arquivo "kml" para cada UPA selecionada e um "kml" com todas as UPA selecionadas. Esses arquivos podem ser abertos com Google Earth apenas cliando sobre os mesmos. [QGIS](http://qgis.org) é uma ferramenta de código aberto que também "renderiza" camadas de base para os arquivos "kml". 
 
-Por supuesto, R nos permite plotar las localizaciones de las UPM seleccionadas. No se preocupen si no entienden el siguiente fragmento de código, pués es apenas otra alternativa para Google Earth y QGIS.
+É claro que o R nós permite plotar as localizações das UPA selecionadas. Não se preocupen se não entendem o seguiente fragmento de código, pois é apenas outra alternativa para Google Earth e QGIS.
 
-Si aparece el error "503 Service Unavailable", debemos intentar más tarde para ver si el servidos OSM vuelve a funcionar (ver la página de ayuda de `get_openstreetmap`).
+Se aparece o erro "503 Service Unavailable", devemos intentar mais tarde para ver se o servidor OSM volta a funcionar (ver a página de ajuda de `get_openstreetmap`).
 
 
 ```r
-> # El paquete rgeos debe estar instalado.
+> # o pacote rgeos deve estar instalado.
 > library(rgdal); library(ggmap); library(ggsn)
+```
+
+```
+Loading required package: sp
+rgdal: version: 1.0-4, (SVN revision 548)
+ Geospatial Data Abstraction Library extensions to R successfully loaded
+ Loaded GDAL runtime: GDAL 1.11.2, released 2015/02/10
+ Path to GDAL shared files: /usr/share/gdal/1.11
+ Loaded PROJ.4 runtime: Rel. 4.8.0, 6 March 2012, [PJ_VERSION: 480]
+ Path to PROJ.4 shared files: (autodetected)
+ Linking to sp version: 1.1-1 
+Loading required package: ggplot2
+Google Maps API Terms of Service: http://developers.google.com/maps/terms.
+Please cite ggmap if you use it: see citation('ggmap') for details.
+```
+
+```r
 > santos <- readOGR(dsn = '.', layer = 'santos')
 ```
 
@@ -55,7 +72,7 @@ It has 1 fields
 > ggmap(osm.all.psu, extent = 'device') + 
 +     geom_polygon(
 +         data = santos.pilot.df,
-+         aes(x = long, y = lat, fill = PSU)) +
++         aes(x = long, e = lat, fill = PSU)) +
 +     coord_equal() +
 +     geom_path(data = santos.pilot.df,
 +               aes(long, lat, group = group),
@@ -68,9 +85,9 @@ It has 1 fields
 
 ![plot of chunk map_all_psu](figures/map_all_psu-1.png) 
 
-Sin importar el método usado para produzir los mapas, debemos diseñar una ruta en el mapa de cada UPM para poder ir por todas las calles. Podemos definir una residencia en un punto arbitrario (localización inferior isquierda) como la primera residencia y a partir de la misma, podemos seguir la ruta contando las residencias (incluyendo los dos lados de los fragmentos de calle totalmente contenidos en la UPM)  
+Sem importar o método usado para producir os mapas, devemos desenhar um percurso no mapa de cada UPA para poder ir por todas as ruas. Podemos definir um domicílio em um ponto arbitrário (localização inferior esquerda) como o primeiro domicílio e a partir do mesmo, podemos seguir o percurso contando os domicílios (incluindo os dois lados dos fragmentos de rua totalmente contidos na UPA).  
 
-El siguiente mapa muestra la cuarta UPM seleccionada.
+O seguiente mapa mostra a quarta UPA selecionada.
 
 
 ```r
@@ -79,7 +96,7 @@ El siguiente mapa muestra la cuarta UPM seleccionada.
 +     scale = 5000)
 > ggmap(osm.psu4) +
 +     geom_polygon(data = santos.pilot[4, ],
-+                  aes(x = long, y = lat),
++                  aes(x = long, e = lat),
 +                  fill = NA,
 +                  color = 'yellow', size = 2) +
 +     coord_equal()
