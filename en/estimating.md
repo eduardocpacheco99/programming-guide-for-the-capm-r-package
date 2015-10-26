@@ -11,27 +11,27 @@ Having defined the final sample, suppose we went to visit all the selected house
 ```
 
 ```
-  interview_id        psu dogs    sex age sterilized sterilized.ly
-1            1 3.5485e+14    1   Male   9        yes           yes
-2            1 3.5485e+14    1 Female   1         no            no
-3            2 3.5485e+14    1 Female   7        yes            no
-4            3 3.5485e+14    1   Male  11         no            no
-5            4 3.5485e+14    1 Female  13         no            no
-6            5 3.5485e+14    1 Female   3         no            no
-  births present    fate     acquired outside acquired.ly immigrant
-1      0     yes in_home       bought      no          no       yes
-2      0     yes in_home       bought      no         yes       yes
-3      0     yes in_home       bought      no         yes       yes
-4      0     yes in_home born_in_home      no          no        no
-5      0     yes in_home         gift     yes          no       yes
-6      0     yes in_home      adopted      no         yes        no
-  immigrant.ly immigrant.sterilized.ly
-1         <NA>                    <NA>
-2          yes                      no
-3          yes                      no
-4           no                    <NA>
-5         <NA>                    <NA>
-6           no                    <NA>
+  interview_id        psu dogs    sex age sterilized
+1            1 3.5485e+14    1   Male   9        yes
+2            1 3.5485e+14    1 Female   1         no
+3            2 3.5485e+14    1 Female   7        yes
+4            3 3.5485e+14    1   Male  11         no
+5            4 3.5485e+14    1 Female  13         no
+6            5 3.5485e+14    1 Female   3         no
+  sterilized.ly births present    fate     acquired outside
+1           yes      0     yes in_home       bought      no
+2            no      0     yes in_home       bought      no
+3            no      0     yes in_home       bought      no
+4            no      0     yes in_home born_in_home      no
+5            no      0     yes in_home         gift     yes
+6            no      0     yes in_home      adopted      no
+  acquired.ly immigrant immigrant.ly immigrant.sterilized.ly
+1          no       yes         <NA>                    <NA>
+2         yes       yes          yes                      no
+3         yes       yes          yes                      no
+4          no        no           no                    <NA>
+5          no       yes         <NA>                    <NA>
+6         yes        no           no                    <NA>
 ```
 
 To estimate the population parameters, the first step is to define the sampling design from which the data came from. To do this, we need a file containing all the sampling units in the population (`psu.ssu`) and a file with the sampling data (`survey.data`). This last file must have a column with the PSU's, another with the SSU's and another with the number of PSU's included in the sample (if a PSU was selected more than once, each occurrence must be counted).
@@ -199,8 +199,8 @@ From here, there is nothing new.
 ```
 
 ```
-[1] "dogs"          "sex"           "sterilized"    "sterilized.ly"
-[5] "fate"         
+[1] "dogs"          "sex"           "sterilized"   
+[4] "sterilized.ly" "fate"         
 ```
 
 ```r
@@ -226,26 +226,26 @@ From here, there is nothing new.
 ```
 
 ```
-                        Estimate       SE     2.5 %    97.5 %  Deff
-Total.dogs             39564.936 3796.867 32123.214 47006.658   Inf
-Total.sterilized       12782.673 1498.520  9845.628 15719.718 0.849
-Prop.sterilized.ly.no      0.870    0.029     0.813     0.926 0.951
-Prop.sterilized.ly.yes     0.130    0.029     0.074     0.187 0.951
-Prop.fate.deied            0.046    0.015     0.016     0.075 0.683
-Prop.fate.given            0.030    0.014     0.003     0.057 0.859
-Prop.fate.in_home          0.885    0.023     0.840     0.931 0.681
-Prop.fate.lost             0.008    0.008    -0.007     0.023 0.980
-Prop.fate.sold             0.031    0.015     0.002     0.061 0.953
-                       Error (%)
-Total.dogs                18.809
-Total.sterilized          22.977
-Prop.sterilized.ly.no      6.502
-Prop.sterilized.ly.yes    43.405
-Prop.fate.deied           65.209
-Prop.fate.given           91.229
-Prop.fate.in_home          5.113
-Prop.fate.lost           190.573
-Prop.fate.sold            93.435
+                        Estimate       SE     2.5 %    97.5 %
+Total.dogs             39564.936 3796.867 32123.214 47006.658
+Total.sterilized       12782.673 1498.520  9845.628 15719.718
+Prop.sterilized.ly.no      0.870    0.029     0.813     0.926
+Prop.sterilized.ly.yes     0.130    0.029     0.074     0.187
+Prop.fate.deied            0.046    0.015     0.016     0.075
+Prop.fate.given            0.030    0.014     0.003     0.057
+Prop.fate.in_home          0.885    0.023     0.840     0.931
+Prop.fate.lost             0.008    0.008    -0.007     0.023
+Prop.fate.sold             0.031    0.015     0.002     0.061
+                        Deff Error (%)
+Total.dogs               Inf    18.809
+Total.sterilized       0.849    22.977
+Prop.sterilized.ly.no  0.951     6.502
+Prop.sterilized.ly.yes 0.951    43.405
+Prop.fate.deied        0.683    65.209
+Prop.fate.given        0.859    91.229
+Prop.fate.in_home      0.681     5.113
+Prop.fate.lost         0.980   190.573
+Prop.fate.sold         0.953    93.435
 ```
 
 ```r
@@ -255,25 +255,25 @@ Prop.fate.sold            93.435
 ```
 
 ```
-                        Estimate       SE     2.5 %    97.5 %  Deff
-Total.dogs             50289.071 3026.661 44356.925 56221.216   Inf
-Total.sterilized        9345.857 1693.130  6027.383 12664.330 1.225
-Prop.sterilized.ly.no      0.957    0.017     0.924     0.989 1.074
-Prop.sterilized.ly.yes     0.043    0.017     0.011     0.076 1.074
-Prop.fate.deied            0.053    0.014     0.026     0.080 0.613
-Prop.fate.given            0.037    0.016     0.006     0.067 1.115
-Prop.fate.in_home          0.857    0.027     0.805     0.910 0.966
-Prop.fate.lost             0.039    0.015     0.010     0.068 0.963
-Prop.fate.sold             0.013    0.009    -0.005     0.031 1.041
-                       Error (%)
-Total.dogs                11.796
-Total.sterilized          35.508
-Prop.sterilized.ly.no      3.383
-Prop.sterilized.ly.yes    74.580
-Prop.fate.deied           50.532
-Prop.fate.given           82.643
-Prop.fate.in_home          6.145
-Prop.fate.lost            74.725
-Prop.fate.sold           134.273
+                        Estimate       SE     2.5 %    97.5 %
+Total.dogs             50289.071 3026.661 44356.925 56221.216
+Total.sterilized        9345.857 1693.130  6027.383 12664.330
+Prop.sterilized.ly.no      0.957    0.017     0.924     0.989
+Prop.sterilized.ly.yes     0.043    0.017     0.011     0.076
+Prop.fate.deied            0.053    0.014     0.026     0.080
+Prop.fate.given            0.037    0.016     0.006     0.067
+Prop.fate.in_home          0.857    0.027     0.805     0.910
+Prop.fate.lost             0.039    0.015     0.010     0.068
+Prop.fate.sold             0.013    0.009    -0.005     0.031
+                        Deff Error (%)
+Total.dogs               Inf    11.796
+Total.sterilized       1.225    35.508
+Prop.sterilized.ly.no  1.074     3.383
+Prop.sterilized.ly.yes 1.074    74.580
+Prop.fate.deied        0.613    50.532
+Prop.fate.given        1.115    82.643
+Prop.fate.in_home      0.966     6.145
+Prop.fate.lost         0.963    74.725
+Prop.fate.sold         1.041   134.273
 ```
 
