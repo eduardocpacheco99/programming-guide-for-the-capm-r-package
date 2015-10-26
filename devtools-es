@@ -1,0 +1,14 @@
+#!/bin/sh
+
+## Move Markdown files and figures form the directory they are produced to the directory they must be in order to build the book.
+
+## pwd must be "Documents/projects/programming-guide-for-the-capm-r-package"
+
+# Clean directories
+
+touch rmds/es/tmp.html rmds/es/tmp.png
+rm rmds/es/*.html
+rm rmds/es/*.png
+
+# Move files
+mv rmds/es/*.md es
