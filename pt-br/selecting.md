@@ -1,4 +1,7 @@
 
+```
+## Error in options(width == 66): object 'width' not found
+```
 
 Com o pacote `capm` é possível implementar os siguientes desenhos amostrais:  
 * Amostragem aleatória sistemática  
@@ -78,13 +81,13 @@ Ao inspeccionar o objeto que acabamos de criar podemos ver que a "clase" dos ide
 
 
 ```r
-> str(pilot.psu)
+> str(pilot.psu, vec.len = 1)
 ```
 
 ```
 'data.frame':	10 obs. of  2 variables:
- $ selected.psu: chr  "354850005000377" "354850005000012" "354850005000195" "354850005000185" ...
- $ size        : int  210 409 288 224 227 243 77 262 475 247
+ $ selected.psu: chr  "354850005000377" ...
+ $ size        : int  210 409 ...
 ```
 
 ```r

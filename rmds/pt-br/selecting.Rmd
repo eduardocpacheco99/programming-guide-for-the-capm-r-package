@@ -2,6 +2,7 @@
 library(knitr)
 opts_knit$set(base.dir='./')
 opts_chunk$set(prompt=TRUE, comment='', fig.path='figures/')
+options(width == 66)
 ```
 
 Com o pacote `capm` é possível implementar os siguientes desenhos amostrais:  
@@ -46,7 +47,7 @@ pilot.psu <- SamplePPS(psu.ssu = psu.ssu,
 Ao inspeccionar o objeto que acabamos de criar podemos ver que a "clase" dos identificadores das UPA foi convertida para `character`. Isto quer dizer que os identificadores agora são representados como texto, no como números.
 
 ```{r}
-str(pilot.psu)
+str(pilot.psu, vec.len = 1)
 head(pilot.psu)
 ```
 
