@@ -11,27 +11,27 @@ Having defined the final sample, suppose we went to visit all the selected house
 ```
 
 ```
-  interview_id        psu dogs    sex age sterilized sterilized.ly
-1            1 3.5485e+14    1   Male   9        yes           yes
-2            1 3.5485e+14    1 Female   1         no            no
-3            2 3.5485e+14    1 Female   7        yes            no
-4            3 3.5485e+14    1   Male  11         no            no
-5            4 3.5485e+14    1 Female  13         no            no
-6            5 3.5485e+14    1 Female   3         no            no
-  births present    fate     acquired outside acquired.ly
-1      0     yes in_home       bought      no          no
-2      0     yes in_home       bought      no         yes
-3      0     yes in_home       bought      no         yes
-4      0     yes in_home born_in_home      no          no
-5      0     yes in_home         gift     yes          no
-6      0     yes in_home      adopted      no         yes
-  immigrant immigrant.ly immigrant.sterilized.ly
-1       yes         <NA>                    <NA>
-2       yes          yes                      no
-3       yes          yes                      no
-4        no           no                    <NA>
-5       yes         <NA>                    <NA>
-6        no           no                    <NA>
+  interview_id        psu dogs    sex age sterilized
+1            1 3.5485e+14    1   Male   9        yes
+2            1 3.5485e+14    1 Female   1         no
+3            2 3.5485e+14    1 Female   7        yes
+4            3 3.5485e+14    1   Male  11         no
+5            4 3.5485e+14    1 Female  13         no
+6            5 3.5485e+14    1 Female   3         no
+  sterilized.ly births present    fate     acquired outside
+1           yes      0     yes in_home       bought      no
+2            no      0     yes in_home       bought      no
+3            no      0     yes in_home       bought      no
+4            no      0     yes in_home born_in_home      no
+5            no      0     yes in_home         gift     yes
+6            no      0     yes in_home      adopted      no
+  acquired.ly immigrant immigrant.ly immigrant.sterilized.ly
+1          no       yes         <NA>                    <NA>
+2         yes       yes          yes                      no
+3         yes       yes          yes                      no
+4          no        no           no                    <NA>
+5          no       yes         <NA>                    <NA>
+6         yes        no           no                    <NA>
 ```
 
 To estimate the population parameters, the first step is to define the sampling design from which the data came from. To do this, we need a file containing all the sampling units in the population (`psu.ssu`) and a file with the sampling data (`survey.data`). This last file must have a column with the PSU's, another with the SSU's and another with the number of PSU's included in the sample (if a PSU was selected more than once, each occurrence must be counted).
@@ -199,8 +199,8 @@ From here, there is nothing new.
 ```
 
 ```
-[1] "dogs"          "sex"           "sterilized"    "sterilized.ly"
-[5] "fate"         
+[1] "dogs"          "sex"           "sterilized"   
+[4] "sterilized.ly" "fate"         
 ```
 
 ```r
