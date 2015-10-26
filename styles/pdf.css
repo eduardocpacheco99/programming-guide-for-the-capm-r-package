@@ -1,4 +1,9 @@
 /* CSS for pdf */
-header, footer {
+header {
     opacity: 0;
+    height: 0.01px;
+}
+#footer {
+    opacity: 1;
+    height: 0.01px;
 }
