@@ -1,4 +1,7 @@
 
+```
+## Error in eval(expr, envir, enclos): could not find function "option"
+```
 
 With the `capm` package it is possible to implement three sample designs:  
 * Systematic random sampling  
