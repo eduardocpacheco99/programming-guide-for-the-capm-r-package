@@ -1,5 +1,7 @@
 # Summary
 
+* [Title page](title-page.md)
+* [Introduction](README.md)
 * [Selecting sampling units](selecting.md)
 * [Mapping sampling units](mapping.md)
 * [Calculating sample size](sampling.md)

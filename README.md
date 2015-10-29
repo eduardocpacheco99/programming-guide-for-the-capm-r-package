@@ -1,7 +1,10 @@
 # Programming guide for the `capm` R package
-#### Oswaldo Santos Baquero
+#### Oswaldo Santos Baquero (Editor)
+#### Markos Amaku
+#### Fernando Ferreira
+<br><br>
 oswaldosant@gmail.com  
-Last revision: 25th October 2015
+Last revision: 29th October 2015
 <br><br><br><br>
 
 The purpose of this guide is to show you how to implement the general [workflow](http://oswaldosantos.github.io/capm) supported by the `capm`, without going into theoretical details or practical implications (these will be the focus of research papers and other complementary documentation).  

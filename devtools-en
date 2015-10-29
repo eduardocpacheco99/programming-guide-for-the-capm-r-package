@@ -6,10 +6,10 @@
 
 # Clean directories
 
-touch rmds/en/tmp.html rmds/en/tmp.png
-rm rmds/en/*.html
-rm rmds/en/*.png
+touch rmds/tmp.html rmds/tmp.png
+rm rmds/*.html
+rm rmds/*.png
 
 # Move files
-mv rmds/en/*.md en
+mv rmds/*.md 
 
