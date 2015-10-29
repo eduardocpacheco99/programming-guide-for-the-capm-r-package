@@ -36,7 +36,7 @@ Tendo definido a amostra final, suponhamos que fomos a visitar todos os domicíl
 6         yes        no           no                    <NA>
 ```
 
-Para estimar os parámetros populacionais, o primeiro passo é definir o desenho amostral que deu origem aos dados. Para fazer isto, precisamos um arquivo com todas as unidades amostrais da população (`psu.ssu`) e um arquivo com os dados amostrais (`survey.data`). Esse último arquivo deve ter uma coluna com as UPA, outra com as USA e outra com o número de UPA inclusas na amostra (se uma UPA foi selecionada mais de uma vez, cada ocorrência deve ser contada).
+Para estimar os parâmetros populacionais, o primeiro passo é definir o desenho amostral que deu origem aos dados. Para fazer isto, precisamos de um arquivo com todas as unidades amostrais da população (`psu.ssu`) e um arquivo com os dados amostrais (`survey.data`). Esse último arquivo deve ter uma coluna com as UPA, outra com as USA e outra com o número de UPA inclusas na amostra (se uma UPA foi selecionada mais de uma vez, cada ocorrência deve ser contada).
 
 
 ```r
@@ -191,7 +191,7 @@ podemos criar um desenho para cada sexo.
 > design.m <- subset(design.sex, sex == 'Male')
 ```
 
-A partir daqui no há nada novo.
+A partir daqui não há nada novo.
 
 
 ```r

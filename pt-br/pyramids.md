@@ -4,7 +4,7 @@
 
 ## Construindo pirâmides populacionais
 
-As pirâmides populacionais resumem a composição básica da população. Como mínimo, são construidas a partir das variáveis "idade" e "sexo", mas podem estar condicionadas por uma terceira variável categórica. As variáveis devem ser espcificadas nos respectivos argumentos da função.  
+As pirâmides populacionais resumem a composição básica da população. Como mínimo, são construidas a partir das variáveis "idade" e "sexo", mas podem estar condicionadas por uma terceira variável categórica. As variáveis devem ser especificadas nos respectivos argumentos da função.  
 
 Antes de criararmos as pirâmides, mudemos as categorias das variáveis "sexo" e "esterilizado" para que o texto dos gráficos fique em português.
 

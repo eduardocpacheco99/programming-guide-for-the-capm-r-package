@@ -95,7 +95,7 @@ PlotModels(model.out = solve.iasa.pt,
            y.label = 'Animais domiciliados esterilizados')
 ```
 
-Também podemos simular cenários para avaliar a interação entre diferentes combinações de taxas de esterilização, de abandono, de adopção e de imigração. No seguiente exemplo criaremos 900 cenários (50 taxas de esterilização, 3 taxas de abandono, 3 taxas de adopção e 2 taxas de imigração).
+Também podemos simular cenários para avaliar a interação entre diferentes combinações de taxas de esterilização, de abandono, de adoção e de imigração. No seguiente exemplo criaremos 900 cenários (50 taxas de esterilização, 3 taxas de abandono, 3 taxas de adopção e 2 taxas de imigração).
 
 ```{r scenarios,fig.height=12,fig.width=12}
 solve.iasa.rg <- SolveIASA(

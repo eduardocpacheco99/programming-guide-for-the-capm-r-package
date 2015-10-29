@@ -50,9 +50,9 @@ solve.iasa.pt <- SolveIASA(
 
 ## Priorizando intervenções
 
-Para finalizar, faremos análises de sensibilidade global e local para classificar os parâmetros de acordo com a influência que exercem. Dado que as intervenções de manejo populacional são mecanismos para modificar (o mantener estáveis) parâmetros populacionais, a classificação de parâmetros é também uma classificação de intervenções, ou em outras palavras, uma forma de priorizar as intervenções.
+Para finalizar, faremos análises de sensibilidade global e local para classificar os parâmetros de acordo com a influência que exercem. Dado que as intervenções de manejo populacional são mecanismos para modificar (o manter estáveis) parâmetros populacionais, a classificação de parâmetros é também uma classificação de intervenções, ou em outras palavras, uma forma de priorizar as intervenções.
 
-As análises de sensibilidade global são usadas para avaliar a contribução dos parâmetros do modelo, na variação dos resultados. Com as análises de sensibilidade global é possível adicionar incertezas a todos os parâmetros e avaliar o efeito que produzem conjuntamente na dinámica populacional. A continuação perturbaremos simultaneamente cada parâmetro em um intervalo cujos limites inferior e superior são respectivamente, 10% menores e 10% superiores às estimativas pontuais (para as capacidades de suporte, no consideraremos valores menores do que as estimativas pontuais).
+As análises de sensibilidade global são usadas para avaliar a contribução dos parâmetros do modelo, na variação dos resultados. Com as análises de sensibilidade global é possível adicionar incertezas a todos os parâmetros e avaliar o efeito que produzem conjuntamente na dinâmica populacional. A seguir perturbaremos simultaneamente cada parâmetro em um intervalo cujos limites inferior e superior são respectivamente, 10% menores e 10% superiores às estimativas pontuais (para as capacidades de suporte, no consideraremos valores menores do que as estimativas pontuais).
 
 ```{r global_sens_all}
 rg.solve.iasa <-
@@ -70,11 +70,11 @@ PlotGlobalSens(global.out = glob.all.solve.iasa,
 glob.all.solve.iasa
 ```
 
-A diferênça de simulações baseadas só em estimativas pontuais, aqui obtivemos um conjunto de possíveis resultados representados por um envelope, no lugar de um único resultado representado por uma linha.  
+A diferença de simulações baseadas só em estimativas pontuais, aqui obtivemos um conjunto de possíveis resultados representados por um envelope, no lugar de um único resultado representado por uma linha.  
 
 Para alguns parâmetros obtivemos as estimativas usando técnicas de amostragem, mas para outros, as estimativas foram subjetivas. Dado que há incertezas em relação aos valores exatos dos parâmetros, os resultados das perturbações também representam as nossas incertezas.  
 
-Una questão que surge é: a dinámica populacional é igualmente sensível a todos os parâmetros? Se não, quais os parâmetros mais influentes? Uma forma de responder essas perguntas consiste na realização de análises de sensibilidade global, perturbando um parámetro por vez e fixando os restantes nas estimativas pontuais.
+Una questão que surge é: a dinâmica populacional é igualmente sensível a todos os parâmetros? Se não, quais os parâmetros mais influentes? Uma forma de responder essas perguntas consiste na realização de análises de sensibilidade global, perturbando um parâmetro por vez e fixando os restantes nas estimativas pontuais.
 
 ```{r global_sens}
 glob.solve.iasa <- CalculateGlobalSens(
@@ -99,4 +99,4 @@ PlotLocalSens(local.out = local.solve.iasa)
 summary(local.solve.iasa)
 ```
 
-Ao ver as sensibilidades globais de cada parâmetro e as sensibilidades locais, é claro que a capacidade de suporte da população de cães domiciliados é de longe o parâmetro mais influente para o total de cães domiciliados (quanto maior o envelope (o a barra), maior a influência do respectivo parâmetro).
+Ao ver as sensibilidades globais de cada parâmetro e as sensibilidades locais, é claro que a capacidade de suporte da população de cães domiciliados é de longe o parâmetro mais influente para o total de cães domiciliados (quanto maior o envelope (ou a barra), maior a influência do respectivo parâmetro).

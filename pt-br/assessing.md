@@ -105,7 +105,7 @@ A dinámica de diferentes subpopulações tambem pode ser plotada (ver a página
 
 ![plot of chunk point_estimates_simulation](figures/point_estimates_simulation-1.png) 
 
-Também podemos simular cenários para avaliar a interação entre diferentes combinações de taxas de esterilização, de abandono, de adopção e de imigração. No seguiente exemplo criaremos 900 cenários (50 taxas de esterilização, 3 taxas de abandono, 3 taxas de adopção e 2 taxas de imigração).
+Também podemos simular cenários para avaliar a interação entre diferentes combinações de taxas de esterilização, de abandono, de adoção e de imigração. No seguiente exemplo criaremos 900 cenários (50 taxas de esterilização, 3 taxas de abandono, 3 taxas de adopção e 2 taxas de imigração).
 
 
 ```r

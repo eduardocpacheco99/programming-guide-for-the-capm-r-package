@@ -4,7 +4,7 @@
 
 ## Mapeando unidades amostrais
 
-Para o desenho por conglomerados em dois estágios (ver secção anterior), quase sempre é necesario mapear as UPA para saber a donde debemos ir. Afortunadamente o `capm` tem uma função para mapear as UPA. Se temos um shapefile das UPA estamos feitos - como neste caso. Na área de trabalho há cinco arquivos chamados "santos", cada um com uma extenção diferente. Todos esses arquivos são uma representação shapefile das UPA da área de amostragem (cidade de Santos). Esses arquivos também foram obtidos no IBGE (ver seção anterior).
+Para o desenho por conglomerados em dois estágios (ver seção anterior), quase sempre é necesario mapear as UPA para saber adonde devemos ir. Afortunadamente o `capm` tem uma função para mapear as UPA. Se temos um shapefile das UPA estamos feitos - como neste caso. Na área de trabalho há cinco arquivos chamados "santos", cada um com uma extensão diferente. Todos esses arquivos são uma representação shapefile das UPA da área de amostragem (cidade de Santos). Esses arquivos também foram obtidos no IBGE (ver seção anterior).
 
 
 ```r
@@ -15,9 +15,9 @@ Para o desenho por conglomerados em dois estágios (ver secção anterior), quas
 
 `MapkmlPSU` cria um arquivo "kml" para cada UPA selecionada e um "kml" com todas as UPA selecionadas. Esses arquivos podem ser abertos com Google Earth apenas cliando sobre os mesmos. [QGIS](http://qgis.org) é uma ferramenta de código aberto que também "renderiza" camadas de base para os arquivos "kml". 
 
-É claro que o R nós permite plotar as localizações das UPA selecionadas. Não se preocupen se não entendem o seguiente fragmento de código, pois é apenas outra alternativa para Google Earth e QGIS.
+É claro que o R nós permite plotar as localizações das UPA selecionadas. Não se preocupem se não entendem o seguente fragmento de código, pois é apenas outra alternativa para Google Earth e QGIS.
 
-Se aparece o erro "503 Service Unavailable", devemos intentar mais tarde para ver se o servidor OSM volta a funcionar (ver a página de ajuda de `get_openstreetmap`).
+Se aparece o erro "503 Service Unavailable", devemos tentar mais tarde para ver se o servidor OSM volta a funcionar (ver a página de ajuda de `get_openstreetmap`).
 
 
 ```r
@@ -85,9 +85,9 @@ It has 1 fields
 
 ![plot of chunk map_all_psu](figures/map_all_psu-1.png) 
 
-Sem importar o método usado para producir os mapas, devemos desenhar um percurso no mapa de cada UPA para poder ir por todas as ruas. Podemos definir um domicílio em um ponto arbitrário (localização inferior esquerda) como o primeiro domicílio e a partir do mesmo, podemos seguir o percurso contando os domicílios (incluindo os dois lados dos fragmentos de rua totalmente contidos na UPA).  
+Sem importar o método usado para produzir os mapas, devemos desenhar um percurso no mapa de cada UPA para poder ir por todas as ruas. Podemos definir um domicílio em um ponto arbitrário (localização inferior esquerda) como o primeiro domicílio e a partir do mesmo, podemos seguir o percurso contando os domicílios (incluindo os dois lados dos fragmentos de rua totalmente contidos na UPA).  
 
-O seguiente mapa mostra a quarta UPA selecionada.
+O seguinte mapa mostra a quarta UPA selecionada.
 
 
 ```r

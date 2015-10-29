@@ -29,7 +29,7 @@ survey.data <- read.csv('survey.data.csv')
 head(survey.data)
 ```
 
-Para estimar os parámetros populacionais, o primeiro passo é definir o desenho amostral que deu origem aos dados. Para fazer isto, precisamos um arquivo com todas as unidades amostrais da população (`psu.ssu`) e um arquivo com os dados amostrais (`survey.data`). Esse último arquivo deve ter uma coluna com as UPA, outra com as USA e outra com o número de UPA inclusas na amostra (se uma UPA foi selecionada mais de uma vez, cada ocorrência deve ser contada).
+Para estimar os parâmetros populacionais, o primeiro passo é definir o desenho amostral que deu origem aos dados. Para fazer isto, precisamos de um arquivo com todas as unidades amostrais da população (`psu.ssu`) e um arquivo com os dados amostrais (`survey.data`). Esse último arquivo deve ter uma coluna com as UPA, outra com as USA e outra com o número de UPA inclusas na amostra (se uma UPA foi selecionada mais de uma vez, cada ocorrência deve ser contada).
 
 ```{r}
 design <- DesignSurvey(sample = survey.data,
@@ -94,7 +94,7 @@ design.f <- subset(design.sex, sex == 'Female')
 design.m <- subset(design.sex, sex == 'Male')
 ```
 
-A partir daqui no há nada novo.
+A partir daqui não há nada novo.
 
 ```{r}
 # Comillas cerradas exculyen una variable
