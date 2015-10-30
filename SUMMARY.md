@@ -1,6 +1,7 @@
 # Summary
 
 * [Title page](title-page.md)
+* [Authors](authors.md)
 * [Introduction](README.md)
 * [Selecting sampling units](selecting.md)
 * [Mapping sampling units](mapping.md)

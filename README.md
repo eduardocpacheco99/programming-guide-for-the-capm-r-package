@@ -1,10 +1,11 @@
 # Programming guide for the `capm` R package
-#### Oswaldo Santos Baquero (Editor)
+#### Oswaldo Santos Baquero (coordinator)
 #### Markos Amaku
 #### Fernando Ferreira
 <br>
 Contact: <oswaldosant@gmail.com>
-Last revision: 29th October 2015  
+<br>
+Last revision: 30th October 2015  
 In case of not being reading the online version, this version might be outdated.  
 Click [here](https://www.gitbook.com/book/oswaldosantos/programming-guide-for-the-capm-r-package/details) to access the book's webpage.
 <br><br><br><br>
