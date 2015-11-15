@@ -5,7 +5,7 @@
 <br>
 Contact: <oswaldosant@gmail.com>
 <br>
-Last revision: 4th November 2015  
+Last revision: 15th November 2015  
 In case of not being reading the online version, this version might be outdated.  
 Click [here](https://www.gitbook.com/book/oswaldosantos/programming-guide-for-the-capm-r-package/details) to access the book's webpage.
 <br><br><br><br>
