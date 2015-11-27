@@ -1,6 +1,7 @@
 # Summary
 
 * [Title page](title-page.md)
+* [Catalographic card](catalographic-card.md)
 * [Authors](authors.md)
 * [Introduction](README.md)
 * [Selecting sampling units](selecting.md)
