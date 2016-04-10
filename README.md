@@ -1,11 +1,11 @@
 # Programming guide for the `capm` R package
-#### Oswaldo Santos Baquero (coordinator)
+#### Oswaldo Santos Baquero
 #### Markos Amaku
 #### Fernando Ferreira
 <br>
 Contact: <oswaldosant@gmail.com>
 <br>
-Last revision: 15th November 2015  
+Last revision: 10 March 2016  
 In case of not being reading the online version, this version might be outdated.  
 Click [here](https://www.gitbook.com/book/oswaldosantos/programming-guide-for-the-capm-r-package/details) to access the book's webpage.
 <br><br><br><br>
@@ -16,7 +16,7 @@ The purpose of this guide is to show you how to implement the general [workflow]
 
 * Minimal background in R programming.
 * Familiarity with R functions' help pages.
-* `capm` version 0.8.0 installed.
+* `capm` version 0.9.1 installed.
 * The current working directory must contain the following files: 
  * pilot.csv
  * psu.ssu.csv
