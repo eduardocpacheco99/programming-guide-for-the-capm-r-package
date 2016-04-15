@@ -4,6 +4,7 @@
 * [Catalographic card](catalographic-card.md)
 * [Authors](authors.md)
 * [Introduction](README.md)
+* [Acknowledgments](acknowledgments.md)
 * [Selecting sampling units](selecting.md)
 * [Mapping sampling units](mapping.md)
 * [Calculating sample size](sampling.md)
