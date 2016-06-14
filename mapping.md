@@ -13,9 +13,9 @@ For two-stage cluster designs (see previous section), it is almost necessary to 
 +           id = 1)
 ```
 
-`MapkmlPSU` creates a "kml" file for each selected PSU plus a kml with all selected PSU's. Those kml files can be opened with Google Hearth just clicking on them. [QGIS](http://qgis.org) is an open source tool, which can also render different layers as a background to the kml files. 
+`MapkmlPSU` creates a "kml" file for each selected PSU plus a kml with all selected PSU's. Those kml files can be opened with Google Earth just clicking on them. [QGIS](http://qgis.org) is an open source tool, which can also render different layers as a background to the kml files. 
 
-Of course, R allow us to plot the locations of the selected PSU's. Do not worry if you do not understand the following code snippet, it is just another alternative to Google Hearth or QGIS.
+Of course, R allow us to plot the locations of the selected PSU's. Do not worry if you do not understand the following code snippet, it is just another alternative to Google Earth or QGIS.
 
 If "503 Service Unavailable" error appears, try later to see if OSM servers come back (see the help page for `get_openstreetmap`).
 
@@ -23,35 +23,6 @@ If "503 Service Unavailable" error appears, try later to see if OSM servers come
 ```r
 > # The package rgeos must be installed.
 > library(rgdal); library(broom); library(ggmap); library(ggsn)
-```
-
-```
-Loading required package: sp
-```
-
-```
-rgdal: version: 1.1-8, (SVN revision 616)
- Geospatial Data Abstraction Library extensions to R successfully loaded
- Loaded GDAL runtime: GDAL 1.11.3, released 2015/09/16
- Path to GDAL shared files: /usr/share/gdal/1.11
- Loaded PROJ.4 runtime: Rel. 4.9.2, 08 September 2015, [PJ_VERSION: 491]
- Path to PROJ.4 shared files: (autodetected)
- Linking to sp version: 1.2-3 
-```
-
-```
-Loading required package: ggplot2
-```
-
-```
-Google Maps API Terms of Service: http://developers.google.com/maps/terms.
-```
-
-```
-Please cite ggmap if you use it: see citation('ggmap') for details.
-```
-
-```r
 > santos <- readOGR(dsn = '.', layer = 'santos')
 ```
 
