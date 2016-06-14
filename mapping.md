@@ -22,7 +22,36 @@ If "503 Service Unavailable" error appears, try later to see if OSM servers come
 
 ```r
 > # The package rgeos must be installed.
-> library(rgdal); library(ggmap); library(ggsn)
+> library(rgdal); library(broom); library(ggmap); library(ggsn)
+```
+
+```
+Loading required package: sp
+```
+
+```
+rgdal: version: 1.1-8, (SVN revision 616)
+ Geospatial Data Abstraction Library extensions to R successfully loaded
+ Loaded GDAL runtime: GDAL 1.11.3, released 2015/09/16
+ Path to GDAL shared files: /usr/share/gdal/1.11
+ Loaded PROJ.4 runtime: Rel. 4.9.2, 08 September 2015, [PJ_VERSION: 491]
+ Path to PROJ.4 shared files: (autodetected)
+ Linking to sp version: 1.2-3 
+```
+
+```
+Loading required package: ggplot2
+```
+
+```
+Google Maps API Terms of Service: http://developers.google.com/maps/terms.
+```
+
+```
+Please cite ggmap if you use it: see citation('ggmap') for details.
+```
+
+```r
 > santos <- readOGR(dsn = '.', layer = 'santos')
 ```
 
@@ -42,11 +71,17 @@ It has 1 fields
 +     CRS('+init=epsg:4326'))
 > santos.pilot@data$id <-
 +     rownames(santos.pilot@data)
-> santos.pilot.points <- fortify(santos.pilot,
-+                                region = "id")
+> santos.pilot.points <- fortify(santos.pilot)
+```
+
+```
+Regions defined for each Polygons
+```
+
+```r
 > santos.pilot.df <- merge(santos.pilot.points,
 +                          santos.pilot@data,
-+                          by = "id")
++                          by = 'id')
 > 
 > osm.all.psu <- get_openstreetmap(
 +     bbox = c(-46.386, -23.991, -46.298, -23.929),
@@ -66,7 +101,7 @@ It has 1 fields
 +     north(santos.pilot.df, symbol = 15)
 ```
 
-![plot of chunk map_all_psu](figures/map_all_psu-1.png) 
+![plot of chunk map_all_psu](figures/map_all_psu-1.png)
 
 Whatever the method used to produce the maps, we must to sketch a route in the map of each selected PSU in order to go over all streets. We can set a household in an arbitrary point (i.e. the lower left location) as the first household. From it, we can go through the route counting the households (including both sides of streets fragment totally contained in the PSU) and interviewing those that were selected.  
 
@@ -89,4 +124,4 @@ The following map shows the fourth selected PSU.
 Regions defined for each Polygons
 ```
 
-![plot of chunk map_4th_psu](figures/map_4th_psu-1.png) 
+![plot of chunk map_4th_psu](figures/map_4th_psu-1.png)
